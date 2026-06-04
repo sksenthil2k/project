@@ -1,16 +1,20 @@
-# Re-create credentials file with both [default] and [DEV] sections
+$accessKey = Read-Host "Paste your AWS_ACCESS_KEY_ID_DEV"
+$secretKey = Read-Host "Paste your AWS_SECRET_KEY_DEV"
+$sessionToken = Read-Host "Paste your AWS_SESSION_TOKEN"
+
+# Write all three values to the credentials file
 @"
 [default]
-aws_access_key_id = $env:AWS_ACCESS_KEY_ID
-aws_secret_access_key = $env:AWS_SECRET_ACCESS_KEY
-aws_session_token = $env:AWS_SESSION_TOKEN
+aws_access_key_id = $($accessKey.Trim())
+aws_secret_access_key = $($secretKey.Trim())
+aws_session_token = $($sessionToken.Trim())
 region = us-east-1
 
 [DEV]
-aws_access_key_id = $env:AWS_ACCESS_KEY_ID
-aws_secret_access_key = $env:AWS_SECRET_ACCESS_KEY
-aws_session_token = $env:AWS_SESSION_TOKEN
+aws_access_key_id = $($accessKey.Trim())
+aws_secret_access_key = $($secretKey.Trim())
+aws_session_token = $($sessionToken.Trim())
 region = us-east-1
 "@ | Set-Content "$env:USERPROFILE\.aws\credentials"
 
-Write-Host "Credentials file successfully updated with [DEV] profile!"
+Write-Host "Credentials file successfully updated with Access Key, Secret Key, and Session Token!"
