@@ -1,3 +1,3 @@
-PS C:\Users\143500\Desktop\awscost\awscost> echo $env:AWS_ACCESS_KEY_ID_DEV
-PS C:\Users\143500\Desktop\awscost\awscost> echo $env:AWS_SECRET_KEY_DEV
-PS C:\Users\143500\Desktop\awscost\awscost>
+$env:AWS_ACCESS_KEY_ID = "PASTE_YOUR_DEV_KEY_VALUE_HERE"
+$env:AWS_SECRET_ACCESS_KEY = "PASTE_YOUR_DEV_SECRET_VALUE_HERE"
+$env:AWS_REGION = "ap-south-1"
