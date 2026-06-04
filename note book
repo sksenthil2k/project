@@ -1,54 +1,61 @@
-PS C:\Users\143500\Desktop\awscost\awscost> $body = '{"accountId":"123","startDate":"2024-01-01","endDate":"2024-12-31","granularity":"MONTHLY"}'
-PS C:\Users\143500\Desktop\awscost\awscost> 
-PS C:\Users\143500\Desktop\awscost\awscost> try {
->>     Invoke-RestMethod -Uri "http://localhost:8080/awscost/api/generate" `
->>         -Method POST `
->>         -ContentType "application/json" `
->>         -Body $body
->> } catch {
->>     $stream = $_.Exception.Response.GetResponseStream()
->>     $reader = New-Object System.IO.StreamReader($stream)
->>     $reader.ReadToEnd()
->> }
-{"timestamp":"2026-06-04T09:08:36.672+00:00","status":500,"error":"Internal Server Error","path":"/awscost/api/generate"}
-PS C:\Users\143500\Desktop\awscost\awscost> Test-Path "$env:USERPROFILE\.aws\credentials"
-False
-PS C:\Users\143500\Desktop\awscost\awscost> $body = '{"accountId":"default","startDate":"2024-01-01","endDate":"2024-12-31","granularity":"MONTHLY"}'               
-PS C:\Users\143500\Desktop\awscost\awscost> try {
->>     Invoke-RestMethod -Uri "http://localhost:8080/awscost/api/generate" `      
->>         -Method POST `                                                         
->>         -ContentType "application/json" `                                      
->>         -Body $body                                                            
->> } catch {                                                                      
->>     $reader = New-Object System.IO.StreamReader($_.Exception.Response.GetResponseStream())                                                                       
->>     $reader.ReadToEnd()                                                        
->> }
-{"timestamp":"2026-06-04T09:29:17.588+00:00","status":500,"error":"Internal Server Error","trace":"java.lang.NullPointerException: Cannot invoke \"String.toUpperCase()\" because the return value of \"com.healthproof.intplus.awscost.CostRequest.getEnvironment()\" is null\r\n\tat com.healthproof.intplus.awscost.awsDev.CostExplorerDev.init(CostExplorerDev.java:45)\r\n\tat com.healthproof.intplus.awscost.awsDev.CostExplorerDev.start(CostExplorerDev.java:30)\r\n\tat com.healthproof.intplus.awscost.contorller.CostContorller.generate(CostContorller.java:35)\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)\r\n\tat java.base/java.lang.reflect.Method.invoke(Unknown Source)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\r\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\r\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\r\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\r\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\r\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\r\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\r\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\r\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\r\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\r\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\r\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)\r\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)\r\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\r\n\tat java.base/java.lang.Thread.run(Unknown Source)\r\n","message":"Cannot invoke \"String.toUpperCase()\" because the return value of \"com.healthproof.intplus.awscost.CostRequest.getEnvironment()\" is null","path":"/awscost/api/generate"}
-PS C:\Users\143500\Desktop\awscost\awscost> # Check AWS credentials
-PS C:\Users\143500\Desktop\awscost\awscost> Test-Path "$env:USERPROFILE\.aws\credentials"                                                                           
-False
-PS C:\Users\143500\Desktop\awscost\awscost> # Check application.properties
-PS C:\Users\143500\Desktop\awscost\awscost> Get-Content "src\main\resources\application.properties"                                                                 
-spring.application.name=Aws Cost
-server.servlet.context-path=/awscost
-spring.web.resources.static-locations=classpath:/static/
-excel.template.file.path = D:\\Users\\266741\\costsheet\\template
+Fix the JS body to include environment. Run in PowerShell:
+
+powershell
+$f = "target\classes\static\assets2\index-D4MhRnQS.js"
+$c = [System.IO.File]::ReadAllText((Resolve-Path $f))
+$old = 'JSON.stringify({accountId:"default",startDate:"2024-01-01",endDate:"2024-12-31",granularity:"MONTHLY"})'
+$new = 'JSON.stringify({accountId:"default",startDate:"2024-01-01",endDate:"2024-12-31",granularity:"MONTHLY",environment:"dev"})'
+$c = $c.Replace($old, $new)
+[System.IO.File]::WriteAllText((Resolve-Path $f), $c)
+Write-Host "Fixed: $($c -match 'environment')"
+Problem 2 — AWS Credentials Missing
+Test-Path "$env:USERPROFILE\.aws\credentials" → False
+Create the credentials file:
+
+powershell
+# Create .aws folder
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.aws"
+# Create credentials file - replace with REAL values
+@"
+[default]
+aws_access_key_id = YOUR_ACCESS_KEY_HERE
+aws_secret_access_key = YOUR_SECRET_KEY_HERE
+aws_session_token = YOUR_SESSION_TOKEN_IF_ANY
+region = ap-south-1
+"@ | Set-Content "$env:USERPROFILE\.aws\credentials"
+Get the real AWS keys from your team/AWS console.
+
+Problem 3 — Wrong File Paths in application.properties
+Your application.properties has paths for user 266741 but you're on machine 143500:
+
+properties
+# WRONG - points to user 266741's directory
+excel.output.file.path = D:\\Users\\266741\\costsheet\\output
+Fix: Create those directories OR update paths:
+
+powershell
+# Option A: Create the missing directories
+New-Item -ItemType Directory -Force -Path "D:\Users\266741\costsheet\template"
+New-Item -ItemType Directory -Force -Path "D:\Users\266741\costsheet\input"
+New-Item -ItemType Directory -Force -Path "D:\Users\266741\costsheet\output"
+OR update application.properties to use your username:
+
+properties
+excel.template.file.path = D:\\Users\\143500\\costsheet\\template
 excel.template.file.name = template
-excel.input.file.path = D:\\Users\\266741\\costsheet\\input
+excel.input.file.path = D:\\Users\\143500\\costsheet\\input
 excel.input.file.name = input
-excel.output.file.path = D:\\Users\\266741\\costsheet\\output
+excel.output.file.path = D:\\Users\\143500\\costsheet\\output
 excel.output.file.name = output
-server.error.include-message=always
-server.error.include-binding-errors=always
-server.error.include-stacktrace=always
+Then create those folders:
 
-
-#server.servlet.register-default-servlet=true
-PS C:\Users\143500\Desktop\awscost\awscost> # Check if output directory exists
-PS C:\Users\143500\Desktop\awscost\awscost> Get-Content "src\main\resources\application.properties" | Select-String "output"                                        
-
-excel.output.file.path = D:\\Users\\266741\\costsheet\\output
-excel.output.file.name = output
-
-
-PS C:\Users\143500\Desktop\awscost\awscost> 
+powershell
+New-Item -ItemType Directory -Force -Path "D:\Users\143500\costsheet\template"
+New-Item -ItemType Directory -Force -Path "D:\Users\143500\costsheet\input"
+New-Item -ItemType Directory -Force -Path "D:\Users\143500\costsheet\output"
+Fix Order
+1. ✅ Fix environment field in JS   → fixes current 500
+2. ✅ Add AWS credentials           → fixes next error  
+3. ✅ Fix/create file paths         → fixes Excel write error
+4. Restart Spring Boot
+5. Hard refresh browser (Ctrl+Shift+R)
