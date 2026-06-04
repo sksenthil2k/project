@@ -1,17 +1,13 @@
 index-D4MhRnQS.js:9 
- GET http://localhost:8080/hello 404 (Not Found)
+ POST http://localhost:8080/awscost/api/generate 500 (Internal Server Error)
+
 index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
+    at ad (index-D4MhRnQS.js:9:37565)
+    at async X (index-D4MhRnQS.js:9:37713)
 index-D4MhRnQS.js:9 
- GET http://localhost:8080/hello 404 (Not Found)
+ POST http://localhost:8080/awscost/api/generate 500 (Internal Server Error)
 index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-index-D4MhRnQS.js:9 
- GET http://localhost:8080/hello 404 (Not Found)
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
+    at ad (index-D4MhRnQS.js:9:37565)
+    at async X (index-D4MhRnQS.js:9:37713)
 ﻿
 
