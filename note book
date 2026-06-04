@@ -1,29 +1,33 @@
-The backend is still complaining that environment is null because the browser is likely caching the old Javascript bundle, or the file in src/main/resources was not updated.
+package com.healthproof.intplus.awscost;
 
-Instead of fighting the minified Javascript, let's fix the backend code so it handles a null environment gracefully by defaulting to "DEV". This is much safer and more reliable!
+public class CostRequest {
+    public String getEnvironment() {
+        return environment;
+    }
 
-Step 1: Run this PowerShell command to search for CostRequest.java
-This will help us find where the request model is located in your office project:
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
 
-powershell
-Get-ChildItem -Recurse -Filter "CostRequest.java"
-Also find CostExplorerDev.java:
+    private String environment;
 
-powershell
-Get-ChildItem -Recurse -Filter "CostExplorerDev.java"
-Step 2: Safe Backend Fix
-Once we locate CostRequest.java (usually under src/main/java/.../CostRequest.java), we can update the getter to default to "DEV" if it's null.
+    public String getAccountName() {
+        return accountName;
+    }
 
-For example, in CostRequest.java:
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
 
-java
-public String getEnvironment() {
-    return environment != null ? environment : "DEV";
+    private String accountName;
+
+    public String getEspCost() {
+        return espCost;
+    }
+
+    public void setEspCost(String espCost) {
+        this.espCost = espCost;
+    }
+
+    private String espCost;
 }
-Or in CostExplorerDev.java at line 45 (or CostContorller.java before calling start):
-
-java
-if (request.getEnvironment() == null) {
-    request.setEnvironment("DEV");
-}
-Let's run the search commands in Step 1 so I can see the exact file paths and give you the code block to modify them.
