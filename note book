@@ -1,15 +1,112 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AWS Cost Report</title>
+package com.healthproof.intplus.awscost.contorller;
 
-    <script type="module" crossorigin src="./assets2/index-D4MhRnQS.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets2/index-DQ3P1g1z.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+import com.healthproof.intplus.awscost.CostRequest;
+import com.healthproof.intplus.awscost.DownloadRequest;
+import com.healthproof.intplus.awscost.awsDev.CostExplorerDev;
+import com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.*;
+import java.util.Map;
+
+import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentTimeStamp;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_FILE_NAME;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_PATH;
+
+@RestController
+public class CostContorller {
+
+    @Autowired
+    private AdvancedExcelProcessor excelProcessor;
+
+    @Autowired
+    private CostExplorerDev costExplorerDev;
+
+    @Value("${excel.output.file.path}")
+    private String outFilePath;
+
+    @PostMapping("/api/generate")
+    public Map<String, Serializable> generate(@RequestBody CostRequest request) throws IOException {
+        costExplorerDev.start(request);
+        excelProcessor.start(request, costExplorerDev.getModel());
+        return Map.of(
+                "id", "1",
+                "message", "Fetching the aws cost and populating the data!",
+                "code", 200,
+                "timeStamp", getCurrentTimeStamp(),
+                "fileName", excelProcessor.getFileName(),
+                "status", "success"
+        );
+    }
+
+    @GetMapping("/downloads/{filename}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) throws IOException {
+        String filePath = outFilePath + File.separator + filename;
+        File file = new File(filePath);
+
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(int) file.length()];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+
+            byte[] excelBytes = bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+    }
+
+    @PostMapping("/downloads")
+    public ResponseEntity<byte[]> downloadFile(@RequestBody DownloadRequest downloadRequest) throws IOException {
+        String filePath = OUTPUT_PATH + OUTPUT_FILE_NAME;
+        File file = new File(filePath);
+
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(int) file.length()];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+
+            byte[] excelBytes = bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+    }
+
+    @GetMapping("/debug-file")
+    public ResponseEntity<byte[]> debug() throws IOException {
+        String filePath = "src/main/resources/output20260309_144204.xlsx";
+        File file = new File(filePath);
+
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(int) file.length()];
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+
+            byte[] excelBytes = bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+    }
+}
