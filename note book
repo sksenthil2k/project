@@ -1,1 +1,2 @@
-Select-String -Path "C:\Users\143500\Desktop\awscost\awscost\pom.xml" -Pattern "apache-client"
+PS C:\Users\143500\Desktop\awscost\awscost> Select-String -Path "C:\Users\143500\Desktop\awscost\awscost\pom.xml" -Pattern "apache-client"
+PS C:\Users\143500\Desktop\awscost\awscost> 
