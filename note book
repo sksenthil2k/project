@@ -1,2 +1,1 @@
-C:\Users\143500\Desktop\awscost\awscost\src\main\java\com\healthproof\intplus\awscost\awsDev\CostExplorerDev.java:8:42
-java: package software.amazon.awssdk.http.apache does not exist
+Get-ChildItem -Path "C:\Users\143500\Desktop\awscost\awscost" -Filter "pom.xml"
