@@ -1,27 +1,41 @@
-# STEP 1: Fix application.properties
+First — Check if your keys are Environment Variables
+powershell
+echo $env:AWS_ACCESS_KEY_ID_DEV
+echo $env:AWS_SECRET_KEY_DEV
+If they print actual values (starting with AKIA...) → run this ONE script:
+
+powershell
+# Fix application.properties - folders INSIDE project
 @"
 spring.application.name=Aws Cost
 server.servlet.context-path=/awscost
 spring.web.resources.static-locations=classpath:/static/
-excel.template.file.path = C:\\Users\\143500\\costsheet\\template
+excel.template.file.path = C:\\Users\\143500\\Desktop\\awscost\\awscost\\costsheet\\template
 excel.template.file.name = template
-excel.input.file.path = C:\\Users\\143500\\costsheet\\input
+excel.input.file.path = C:\\Users\\143500\\Desktop\\awscost\\awscost\\costsheet\\input
 excel.input.file.name = input
-excel.output.file.path = C:\\Users\\143500\\costsheet\\output
+excel.output.file.path = C:\\Users\\143500\\Desktop\\awscost\\awscost\\costsheet\\output
 excel.output.file.name = output
 server.error.include-message=always
 server.error.include-stacktrace=always
 "@ | Set-Content "src\main\resources\application.properties"
-
-# STEP 2: Create folders on C: drive
-New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\template"
-New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\input"
-New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\output"
-
-# STEP 3: Copy input file
-Copy-Item "src\main\resources\input.xlsx" "C:\Users\143500\costsheet\input\input.xlsx" -Force
-
-# STEP 4: Rebuild
+# Create folders INSIDE the project
+New-Item -ItemType Directory -Force -Path "costsheet\template"
+New-Item -ItemType Directory -Force -Path "costsheet\input"
+New-Item -ItemType Directory -Force -Path "costsheet\output"
+# Copy input file inside project
+Copy-Item "src\main\resources\input.xlsx" "costsheet\input\input.xlsx" -Force
+# Set AWS DEV credentials using your environment variables
+@"
+[default]
+aws_access_key_id = $env:AWS_ACCESS_KEY_ID_DEV
+aws_secret_access_key = $env:AWS_SECRET_KEY_DEV
+region = ap-south-1
+"@ | Set-Content "$env:USERPROFILE\.aws\credentials"
+# Rebuild
 mvn clean package -DskipTests
+Write-Host "ALL DONE - Restart Spring Boot now"
+If Keys are NOT environment variables (they print blank)
+Tell me — are they stored in a .env file, a config file, or did your team email them to you? I'll tell you exactly where to copy from.
 
-Write-Host "ALL DONE - Now restart Spring Boot in IntelliJ"
+⚠️ Since you have DEV/SIT/PREPROD/PROD keys — always use DEV keys for local testing. Never use PROD keys locally.
