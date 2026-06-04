@@ -1,2 +1,21 @@
-PS C:\Users\143500\Desktop\awscost\awscost> Select-String -Path "C:\Users\143500\Desktop\awscost\awscost\pom.xml" -Pattern "apache-client"
-PS C:\Users\143500\Desktop\awscost\awscost> 
+$pomFile = "C:\Users\143500\Desktop\awscost\awscost\pom.xml"
+$pomContent = [System.IO.File]::ReadAllText($pomFile)
+
+# The dependency to inject
+$dependencyString = @"
+		<dependency>
+			<groupId>software.amazon.awssdk</groupId>
+			<artifactId>apache-client</artifactId>
+			<version>2.20.63</version>
+		</dependency>
+	</dependencies>
+"@
+
+# Replace the closing </dependencies> tag
+$pomContent = $pomContent.Replace("</dependencies>", $dependencyString)
+
+# Write back
+[System.IO.File]::WriteAllText($pomFile, $pomContent)
+
+# Verify if it worked
+Select-String -Path $pomFile -Pattern "apache-client"
