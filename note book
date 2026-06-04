@@ -1,11 +1,13 @@
-$body = @{
-    accountId = "123"
-    startDate = "2024-01-01"
-    endDate = "2024-12-31"
-    granularity = "MONTHLY"
-} | ConvertTo-Json
-
-Invoke-RestMethod -Uri "http://localhost:8080/awscost/api/generate" `
-    -Method POST `
-    -ContentType "application/json" `
-    -Body $body
+Invoke-RestMethod : The remote server returned an error: (500) 
+Internal Server Error.
+At line:1 char:1
++ Invoke-RestMethod -Uri 
+"http://localhost:8080/awscost/api/generate" `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpW 
+   ebRequest:HttpWebRequest) [Invoke-RestMethod], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Micro 
+   soft.PowerShell.Commands.InvokeRestMethodCommand
+ 
+PS C:\Users\143500\Desktop\awscost\awscost> 
