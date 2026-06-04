@@ -1,0 +1,10 @@
+PS C:\Users\143500\Desktop\awscost\awscost> .\mvnw.cmd clean package
+Get-Content : Cannot find path 'C:\Users\143500\Desktop\awscost\awscost\.mvn\wrapper\maven-wrapper.properties' because it does not exist.
+At line:54 char:21
++ ... utionUrl = (Get-Content -Raw "$scriptDir/.mvn/wrapper/maven-wrapper.p ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\143500...pper.properties:String) [Get-Content], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ECHO is on.
+Cannot start maven from wrapper  
+PS C:\Users\143500\Desktop\awscost\awscost> 
