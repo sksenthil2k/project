@@ -1,26 +1,2 @@
-$pomFile = "pom.xml"
-$pomContent = [System.IO.File]::ReadAllText($pomFile)
-
-# Regex matching the costexplorer dependency block regardless of newlines/whitespace
-$pattern = '(?s)<\s*dependency\s*>\s*<\s*groupId\s*>software\.amazon\.awssdk<\s*/\s*groupId\s*>\s*<\s*artifactId\s*>costexplorer<\s*/\s*artifactId\s*>\s*<\s*version\s*>2\.20\.63<\s*/\s*version\s*>\s*<\s*/\s*dependency\s*>'
-
-$replacement = @"
-<dependency>
-			<groupId>software.amazon.awssdk</groupId>
-			<artifactId>costexplorer</artifactId>
-			<version>2.20.63</version>
-		</dependency>
-		<dependency>
-			<groupId>software.amazon.awssdk</groupId>
-			<artifactId>apache-client</artifactId>
-			<version>2.20.63</version>
-		</dependency>
-"@
-
-if ($pomContent -match $pattern) {
-    $pomContent = $pomContent -replace $pattern, $replacement
-    [System.IO.File]::WriteAllText($pomFile, $pomContent)
-    Write-Host "pom.xml successfully updated with regex!"
-} else {
-    Write-Error "Could not find costexplorer dependency in pom.xml"
-}
+C:\Users\143500\Desktop\awscost\awscost\src\main\java\com\healthproof\intplus\awscost\awsDev\CostExplorerDev.java:8:42
+java: package software.amazon.awssdk.http.apache does not exist
