@@ -1,2 +1,1 @@
-{"timestamp":"2026-06-04T09:08:36.672+00:00","status":500,"error":"Internal Server Error","path":"/awscost/api/generate"}
-PS C:\Users\143500\Desktop\awscost\awscost> 
+Test-Path "$env:USERPROFILE\.aws\credentials"
