@@ -1,38 +1,5 @@
-Run These Exact Commands on Your Office Laptop
-Fix 1 — Fix the wrong API URL in the JS file
-Run this PowerShell in C:\Users\143500\Desktop\awscost\awscost:
-
-powershell
-$f = "src\main\resources\static\assets2\index-D4MhRnQS.js"
-$c = Get-Content $f -Raw
-$c = $c -replace 'const ud="http://localhost:8080"', 'const ud=""'
-$c = $c -replace '`\$\{ud\}/hello`\)', '`/awscost/api/generate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({accountId:"123",startDate:"2024-01-01",endDate:"2024-12-31",granularity:"MONTHLY"})})'
-Set-Content $f $c
-Fix 2 — Do the same in the target/ folder (what Spring Boot actually serves):
-powershell
-$f2 = "target\classes\static\assets2\index-D4MhRnQS.js"
-$c = Get-Content $f2 -Raw
-$c = $c -replace 'const ud="http://localhost:8080"', 'const ud=""'
-$c = $c -replace '`\$\{ud\}/hello`\)', '`/awscost/api/generate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({accountId:"123",startDate:"2024-01-01",endDate:"2024-12-31",granularity:"MONTHLY"})})'
-Set-Content $f2 $c
-Fix 3 — Fix index.html (make sure it loads the right bundle)
-powershell
-@'
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AWS Cost Report</title>
-    <script type="module" crossorigin src="./assets2/index-D4MhRnQS.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets2/index-DQ3P1g1z.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
-'@ | Set-Content "src\main\resources\static\index.html"
-Copy-Item "src\main\resources\static\index.html" "target\classes\static\index.html" -Force
-Fix 4 — Restart the Spring Boot app, then open:
-http://localhost:8080/awscost
-Summary of What Was Wrong
+IBX Dev
+API Response:
+{
+  "error": "Failed to load data"
+}
