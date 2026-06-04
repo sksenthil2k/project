@@ -1,20 +1,12 @@
-$accessKey = Read-Host "Paste your AWS_ACCESS_KEY_ID_DEV"
-$secretKey = Read-Host "Paste your AWS_SECRET_KEY_DEV"
-$sessionToken = Read-Host "Paste your AWS_SESSION_TOKEN"
-
-# Write all three values to the credentials file
-@"
+PS C:\Users\143500\Desktop\awscost\awscost> Get-Content "$env:USERPROFILE\.aws\credentials"
 [default]
-aws_access_key_id = $($accessKey.Trim())
-aws_secret_access_key = $($secretKey.Trim())
-aws_session_token = $($sessionToken.Trim())
+aws_access_key_id = DEV]
+aws_secret_access_key = 
+aws_session_token = 
 region = us-east-1
 
-[DEV]
-aws_access_key_id = $($accessKey.Trim())
-aws_secret_access_key = $($secretKey.Trim())
-aws_session_token = $($sessionToken.Trim())
+[aws_access_key_id = DEV]
+aws_secret_access_key = 
+aws_session_token = 
 region = us-east-1
-"@ | Set-Content "$env:USERPROFILE\.aws\credentials"
-
-Write-Host "Credentials file successfully updated with Access Key, Secret Key, and Session Token!"
+PS C:\Users\143500\Desktop\awscost\awscost> 
