@@ -1,5 +1,11 @@
-IBX Dev
-API Response:
-{
-  "error": "Failed to load data"
-}
+$body = @{
+    accountId = "123"
+    startDate = "2024-01-01"
+    endDate = "2024-12-31"
+    granularity = "MONTHLY"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:8080/awscost/api/generate" `
+    -Method POST `
+    -ContentType "application/json" `
+    -Body $body
