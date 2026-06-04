@@ -1,33 +1,26 @@
-package com.healthproof.intplus.awscost;
+# Find the path of CostRequest.java
+$file = (Get-ChildItem -Recurse -Filter "CostRequest.java").FullName
 
-public class CostRequest {
-    public String getEnvironment() {
-        return environment;
+if ($file) {
+    # Read content
+    $content = [System.IO.File]::ReadAllText($file)
+    
+    # Replace the getter method to return "DEV" if null
+    $oldGetter = "public String getEnvironment() {`r`n        return environment;`r`n    }"
+    $newGetter = "public String getEnvironment() {`r`n        return environment != null ? environment : `"DEV`";`r`n    }"
+    
+    # Try replacing with carriage return/line feed, and fallback to unix style if needed
+    if ($content.Contains($oldGetter)) {
+        $content = $content.Replace($oldGetter, $newGetter)
+    } else {
+        $oldGetterUnix = "public String getEnvironment() {`n        return environment;`n    }"
+        $newGetterUnix = "public String getEnvironment() {`n        return environment != null ? environment : `"DEV`";`n    }"
+        $content = $content.Replace($oldGetterUnix, $newGetterUnix)
     }
-
-    public void setEnvironment(String environment) {
-        this.environment = environment;
-    }
-
-    private String environment;
-
-    public String getAccountName() {
-        return accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-    }
-
-    private String accountName;
-
-    public String getEspCost() {
-        return espCost;
-    }
-
-    public void setEspCost(String espCost) {
-        this.espCost = espCost;
-    }
-
-    private String espCost;
+    
+    # Save the file
+    [System.IO.File]::WriteAllText($file, $content)
+    Write-Host "Successfully patched: $file"
+} else {
+    Write-Error "CostRequest.java not found! Please run the command from the root of awscost folder."
 }
