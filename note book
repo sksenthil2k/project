@@ -1,44 +1,118 @@
-Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
-hello:1  Failed to load resource: the server responded with a status of 404 ()
-index-D4MhRnQS.js:9 Error: Network response was not ok
-    at ad (index-D4MhRnQS.js:9:37411)
-    at async X (index-D4MhRnQS.js:9:37559)
+package com.healthproof.intplus.awscost.contorller;
+
+import com.healthproof.intplus.awscost.CostRequest;
+import com.healthproof.intplus.awscost.DownloadRequest;
+import com.healthproof.intplus.awscost.awsDev.CostExplorerDev;
+import com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.*;
+import java.util.Map;
+
+import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentTimeStamp;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_FILE_NAME;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_PATH;
+
+@RestController
+public class CostContorller {
+    @Autowired
+    private AdvancedExcelProcessor excelProcessor;
+    @Autowired
+    private CostExplorerDev costExplorerDev;
+    @Value("${excel.output.file.path}")
+    private String outFilePath;
+    @PostMapping("/api/generate")
+    public Map<String, Serializable> generate(@RequestBody CostRequest request) throws IOException {
+        costExplorerDev.start(request);
+        excelProcessor.start(request, costExplorerDev.getModel());
+        return Map.of(
+                "id","1",
+                "message", "Fetching the aws cost and populating the data!",
+                "code", 200,
+                "timeStamp", getCurrentTimeStamp(),
+                "fileName", excelProcessor.getFileName(),
+                "status", "success"
+        );
+    }
+
+    @GetMapping("/downloads/{filename}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) throws IOException {
+        String filePath = outFilePath+File.separator+filename;
+        System.out.println("***********->: "+filePath);
+        File file  = new File(filePath);
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(int) file.length()]; // 8KB buffer
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+            byte[] excelBytes =  bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+
+    }
+    @PostMapping("/downloads")
+    public ResponseEntity<byte[]> downloadFile(@RequestBody DownloadRequest downloadRequest) throws IOException {
+        // Load file from the 'static' folder on the classpath
+        System.out.println("inside a download -> :"+downloadRequest.getFileName());
+//        String filePath = "src/main/resources/"+filename;
+        String filePath = OUTPUT_PATH + OUTPUT_FILE_NAME;
+
+        File file  = new File(filePath);
+        FileInputStream fos = new FileInputStream(file);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(byte) file.length()]; // 8KB buffer
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+            byte[] excelBytes =  bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+
+    }
+
+    @GetMapping("/debug-file")
+    public ResponseEntity<byte[]> debug() throws IOException {
+//        Resource res = new ClassPathResource("static/output20260309_144204.xlsx",getClass().getClassLoader());
+//        return "Exists: " + res.exists() + " | URL: " + res.getURL();
+
+        String filePath = "src/main/resources"+"/output20260309_144204.xlsx";
+
+        File file  = new File(filePath);
+        FileInputStream fos = new FileInputStream(file);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        try (FileInputStream fis = new FileInputStream(file);
+             ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+
+            byte[] buffer = new byte[(byte) file.length()]; // 8KB buffer
+            int bytesRead;
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                bos.write(buffer, 0, bytesRead);
+            }
+            byte[] excelBytes =  bos.toByteArray();
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(excelBytes);
+        }
+    }
+
+
+}
