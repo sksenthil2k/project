@@ -1,3 +1,17 @@
-server.error.include-message=always
-server.error.include-binding-errors=always
-server.error.include-stacktrace=always
+index-D4MhRnQS.js:9 
+ GET http://localhost:8080/hello 404 (Not Found)
+index-D4MhRnQS.js:9 Error: Network response was not ok
+    at ad (index-D4MhRnQS.js:9:37411)
+    at async X (index-D4MhRnQS.js:9:37559)
+index-D4MhRnQS.js:9 
+ GET http://localhost:8080/hello 404 (Not Found)
+index-D4MhRnQS.js:9 Error: Network response was not ok
+    at ad (index-D4MhRnQS.js:9:37411)
+    at async X (index-D4MhRnQS.js:9:37559)
+index-D4MhRnQS.js:9 
+ GET http://localhost:8080/hello 404 (Not Found)
+index-D4MhRnQS.js:9 Error: Network response was not ok
+    at ad (index-D4MhRnQS.js:9:37411)
+    at async X (index-D4MhRnQS.js:9:37559)
+﻿
+
