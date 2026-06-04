@@ -1,46 +1,18 @@
- Get-Content "src\main\java\com\healthproof\intplus\awscost\awsDev\CostExplorerDev.java"
-package com.healthproof.intplus.awscost.awsDev;
+$file = "src\main\java\com\healthproof\intplus\awscost\awsDev\CostExplorerDev.java"
+$content = [System.IO.File]::ReadAllText($file)
 
-import com.healthproof.intplus.awscost.CostRequest;
-import com.healthproof.intplus.awscost.Model;
-import com.healthproof.intplus.awscost.util.ExcelMapper;
-import org.springframework.stereotype.Service;
+# 1. Add required imports
+$imports = @"
+import software.amazon.awssdk.http.SdkHttpConfigurationOption;
+import software.amazon.awssdk.http.apache.ApacheHttpClient;
+import software.amazon.awssdk.utils.AttributeMap;
 import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
-import software.amazon.awssdk.services.costexplorer.CostExplorerClient;
-import software.amazon.awssdk.services.costexplorer.model.*;
-import software.amazon.awssdk.thirdparty.jackson.core.JsonProcessingException;
+"@
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+$content = $content.Replace("import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;", $imports)
 
-import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentDate;
-import static com.healthproof.intplus.awscost.util.DateUtil.getPreviousDate;
-
-@Service
-public class CostExplorerDev {
-    private CostExplorerClient caClient;
-    private Model model;
-    CostRequest costRequest;
-    public Model getModel(){
-        return model;
-    }
-    ProfileCredentialsProvider credentialsProvider;
-
-    public void start(CostRequest costRequest) throws JsonProcessingException{
-        this.costRequest = costRequest;
-        init();
-        getH4andH5();
-        getR12Values();
-        getNoTagAndCloudWatch();
-        calculateCommonService();
-        getRow13Values();
-        System.out.println("********----->:"+costRequest.getEnvironment());
-        model.printR12();
-        model.printR13();
-        model.printH4H5();
-        model.printR14();
-    }
-
+# 2. Modify the init() method to trust all SSL certificates
+$oldInit = @"
     private void init() throws JsonProcessingException {
         this.model = new Model();
         credentialsProvider = ProfileCredentialsProvider.create(costRequest.getEnvironment().toUpperCase());
@@ -48,136 +20,28 @@ public class CostExplorerDev {
                 .credentialsProvider(credentialsProvider)
                 .build();
     }
-    public void getH4andH5() {
-        GroupDefinition groupByTag = GroupDefinition.builder()
-                .type(GroupDefinitionType.DIMENSION)
-                .key("RECORD_TYPE") // The name of your tag key
-                .build();
-        GetCostAndUsageRequest request = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY)
-                .metrics("NetAmortizedCost")
-                .groupBy(groupByTag)
-                .build();
-        GetCostAndUsageResponse h4andh5Response = caClient.getCostAndUsage(request);
-        h4andh5Response.resultsByTime().forEach(result -> {
-            result.groups().forEach(group -> {
-                group.metrics().forEach((metricName, metricValue) -> {
-                    model.getModelMapH4H5().put(group.keys().get(0), metricValue.amount());
-                });
-            });
-        });
-    }
-    public void getR12Values() throws JsonProcessingException {
-        GroupDefinition groupByTag = GroupDefinition.builder()
-                .type(GroupDefinitionType.TAG)
-                .key("Product") // The name of your tag key
-                .build();
-        DimensionValues excludeCredits = DimensionValues.builder()
-                .key(Dimension.RECORD_TYPE)
-                .values("Enterprise Discount Program Discount", "SavingsPlanCoveredUsage")
-                .build();
-        Expression excludeFilter = Expression.builder()
-                .not(Expression.builder()
-                        .dimensions(excludeCredits)
-                        .build())
-                .build();
-        GetCostAndUsageRequest requestR12 = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY)
-                .metrics("NetAmortizedCost")
-                .filter(excludeFilter)
-                .groupBy(groupByTag)
-                .build();
-        GetCostAndUsageResponse r12Response = caClient.getCostAndUsage(requestR12);
-        r12Response.resultsByTime().forEach(result -> {
-            result.groups().forEach(group -> {
-                group.metrics().forEach((metricName, metricValue) -> {
-                    model.getModelMapR12().put(group.keys().get(0), metricValue.amount());
-                });
-            });
-        });
-    }
-    public void getNoTagAndCloudWatch(){
-        GroupDefinition groupByTag = GroupDefinition.builder()
-                .type(GroupDefinitionType.DIMENSION)
-                .key("SERVICE") // The name of your tag key
-                .build();
+"@
 
-        DimensionValues excludeCredits = DimensionValues.builder()
-                .key(Dimension.RECORD_TYPE)
-                .values("Enterprise Discount Program Discount", "SavingsPlanCoveredUsage")
+$newInit = @"
+    private void init() throws JsonProcessingException {
+        this.model = new Model();
+        credentialsProvider = ProfileCredentialsProvider.create(costRequest.getEnvironment().toUpperCase());
+        
+        software.amazon.awssdk.http.SdkHttpClient httpClient = ApacheHttpClient.builder()
+                .buildWithDefaults(AttributeMap.builder()
+                        .put(SdkHttpConfigurationOption.TRUST_ALL_CERTIFICATES, Boolean.TRUE)
+                        .build());
+
+        caClient = CostExplorerClient.builder()
+                .credentialsProvider(credentialsProvider)
+                .httpClient(httpClient)
                 .build();
-        Expression excludeFilter = Expression.builder()
-                .not(Expression.builder()
-                        .dimensions(excludeCredits)
-                        .build())
-                .build();
-        TagValues tagValues = TagValues.builder().key("Product").values("").build();
-        Expression includeFilter = Expression.builder()
-                .tags(tagValues)
-                .build();
-        Expression combinedFilter = Expression.builder()
-                .and(excludeFilter, includeFilter)
-                .build();
-        GetCostAndUsageRequest noTagCloudWatchRequest = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY)
-                .metrics("NetAmortizedCost")
-                .filter(combinedFilter)
-                .groupBy(groupByTag)
-                .build();
-        GetCostAndUsageResponse noTagCloudWatchResponse = caClient.getCostAndUsage(noTagCloudWatchRequest);
-        noTagCloudWatchResponse.resultsByTime().forEach(result -> {
-            result.groups().forEach(group -> {
-                group.metrics().forEach((metricName, metricValue) -> {
-                    model.getModelMapR14().put(group.keys().get(0), metricValue.amount());
-                });
-            });
-        });
     }
-    public void getRow13Values(){
-        GroupDefinition groupByTag = GroupDefinition.builder()
-                .type(GroupDefinitionType.TAG)
-                .key("Product") // The name of your tag key
-                .build();
+"@
 
-        DimensionValues includeCredits = DimensionValues.builder()
-                .key(Dimension.RECORD_TYPE)
-                .values("Enterprise Discount Program Discount", "SavingsPlanCoveredUsage")
-                .build();
-        Expression includeFilter = Expression.builder()
-                .dimensions(includeCredits)
-                        .build();
+# Normalize line endings to make replace robust
+$content = $content.Replace($oldInit.Replace("`r`n", "`n"), $newInit.Replace("`r`n", "`n"))
+$content = $content.Replace($oldInit.Replace("`n", "`r`n"), $newInit.Replace("`n", "`r`n"))
 
-
-        GetCostAndUsageRequest noTagCloudWatchRequest = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY)
-                .metrics("NetAmortizedCost")
-                .filter(includeFilter)
-                .groupBy(groupByTag)
-                .build();
-        GetCostAndUsageResponse noTagCloudWatchResponse = caClient.getCostAndUsage(noTagCloudWatchRequest);
-        noTagCloudWatchResponse.resultsByTime().forEach(result -> {
-            result.groups().forEach(group -> {
-                group.metrics().forEach((metricName, metricValue) -> {
-                    model.getModelMapR13().put(group.keys().get(0), metricValue.amount());
-                });
-            });
-        });
-    }
-    private void calculateCommonService(){
-
-        double commonValue = new BigDecimal(
-                model.getModelMapR12().get(ExcelMapper.COMMON).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
-        double totalCost = new BigDecimal(
-                model.getModelMapR12().get(ExcelMapper.NO_KEY_PRODUCT).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
-        double commonEC2ServiceValue = totalCost - new BigDecimal(
-                model.getModelMapR14().get(ExcelMapper.Y12).toString()).
-                setScale(2,RoundingMode.HALF_UP).doubleValue()
-                + commonValue;
-        model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(commonEC2ServiceValue));
-    }
-}
-PS C:\Users\143500\Desktop\awscost\awscost> 
+[System.IO.File]::WriteAllText($file, $content)
+Write-Host "CostExplorerDev.java successfully configured to bypass SSL verification!"
