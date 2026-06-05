@@ -1,14 +1,12 @@
-Get-Content "$env:USERPROFILE\.aws\credentials" | ForEach-Object {
-    if ($_ -match "aws_access_key_id|aws_secret_access_key|aws_session_token") {
-        $parts = $_ -split "="
-        $key = $parts[0].Trim()
-        $val = $parts[1].Trim()
-        if ($val.Length -gt 8) {
-            "$key = $($val.Substring(0, 8))..."
-        } else {
-            "$key = $val"
-        }
-    } else {
-        $_
-    }
-}
+[default]
+aws_access_key_id = ASIA3KSY...
+aws_secret_access_key = EYtDwvZ6...
+aws_session_token = IQoJb3Jp...
+region = us-east-1
+
+[DEV]
+aws_access_key_id = ASIA3KSY...
+aws_secret_access_key = LiZd0pg6...
+aws_session_token = IQoJb3Jp...
+region = us-east-1
+PS C:\Users\143500\Desktop\awscost\awscost
