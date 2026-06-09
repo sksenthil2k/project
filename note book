@@ -1,4 +1,5 @@
-Get-Content (Get-ChildItem -Recurse -Filter "CostRequest.java" | Select-Object -First 1).FullName
+$javaFile = Get-ChildItem -Recurse -Filter "CostRequest.java" | Select-Object -First 1
+$newContent = @"
 package com.healthproof.intplus.awscost;
 
 public class CostRequest {
@@ -23,7 +24,7 @@ public class CostRequest {
     private String accountName;
 
     public String getEspCost() {
-        return espCost;
+        return espCost != null ? espCost : "0";
     }
 
     public void setEspCost(String espCost) {
@@ -32,3 +33,6 @@ public class CostRequest {
 
     private String espCost;
 }
+"@
+[System.IO.File]::WriteAllText($javaFile.FullName, $newContent)
+Write-Host "SUCCESS: CostRequest.java fully overwritten!" -ForegroundColor Green
