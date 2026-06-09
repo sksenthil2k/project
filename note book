@@ -420,7 +420,7 @@ Set-Content "$static\index.html" @'
   <div class="header"><h1>USTHP AWS Cost Report</h1><p>Select companies to generate and download monthly cost reports</p></div>
   
   <div class="controls-bar">
-    <select id="companyFilter"><option value="ALL">All Companies</option></select>
+    <select id="companyFilter"><option value="ALL">All Accounts</option></select>
     <button class="btn btn-secondary" id="btnSelectAll">Select All</button>
     <button class="btn btn-secondary" id="btnDeselectAll">Clear</button>
     <button class="btn btn-primary" id="btnGenerate" disabled>Generate Selected (0)</button>
@@ -440,7 +440,7 @@ Set-Content "$static\index.html" @'
         allProfiles = await res.json();
         
         const filterSelect = document.getElementById('companyFilter');
-        filterSelect.innerHTML = '<option value="ALL">All Companies</option>';
+        filterSelect.innerHTML = '<option value="ALL">All Accounts</option>';
         allProfiles.forEach(p => {
           const opt = document.createElement('option');
           opt.value = p.companyName;
@@ -544,7 +544,10 @@ Set-Content "$static\index.html" @'
       render();
     };
 
-    document.getElementById('companyFilter').onchange = render;
+    document.getElementById('companyFilter').onchange = () => {
+      selectedCompanies.clear();
+      render();
+    };
 
     document.getElementById('btnGenerate').onclick = async () => {
       const sb = document.getElementById('sb');
