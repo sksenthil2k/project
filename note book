@@ -1,1 +1,36 @@
-Get-Content (Get-ChildItem -Recurse -Filter "CostRequest.java" | Select-Object -First 1).FullName
+
+SUCCESS: index-D4MhRnQS.js has been patched!
+PS C:\Users\143500\Desktop\awscost\awscost> Get-Content (Get-ChildItem -Recurse -Filter "CostRequest.java" | Select-Object -First 1).FullName
+package com.healthproof.intplus.awscost;
+
+public class CostRequest {
+    public String getEnvironment() {
+        return environment != null ? environment : "DEV";
+    }
+
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
+
+    private String environment;
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    private String accountName;
+
+    public String getEspCost() {
+        return espCost;
+    }
+
+    public void setEspCost(String espCost) {
+        this.espCost = espCost;
+    }
+
+    private String espCost;
+}
