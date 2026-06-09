@@ -391,13 +391,14 @@ Set-Content "$static\index.html" @'
     
     .card-checkbox{position:absolute;top:15px;right:15px;width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:all .2s;background:rgba(0,0,0,.2)}
     .company-card.selected .card-checkbox{background:var(--primary);border-color:var(--primary)}
-    .card-checkbox::after{content:'✓';color:#fff;font-size:.85rem;font-weight:bold;display:none}
+    .card-checkbox::after{content:'';width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);display:none;margin-bottom:2px}
     .company-card.selected .card-checkbox::after{display:block}
     
     .company-name{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:10px}
     .company-card.selected .company-name{color:#a78bfa}
     
     .status-badge{font-size:.8rem;padding:4px 12px;border-radius:12px;display:inline-block;font-weight:600;background:rgba(255,255,255,.05);color:#9ca3af;margin-top:10px}
+    .status-badge.idle{display:none}
     .status-badge.generating{background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}
     .status-badge.completed{background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3)}
     .status-badge.failed{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
@@ -420,7 +421,6 @@ Set-Content "$static\index.html" @'
   
   <div class="controls-bar">
     <select id="companyFilter"><option value="ALL">All Companies</option></select>
-    <select id="sortOrder"><option value="AZ">Sort A-Z</option><option value="ZA">Sort Z-A</option></select>
     <button class="btn btn-secondary" id="btnSelectAll">Select All</button>
     <button class="btn btn-secondary" id="btnDeselectAll">Clear</button>
     <button class="btn btn-primary" id="btnGenerate" disabled>Generate Selected (0)</button>
@@ -465,18 +465,13 @@ Set-Content "$static\index.html" @'
       container.innerHTML = '';
       
       const filterVal = document.getElementById('companyFilter').value;
-      const sortVal = document.getElementById('sortOrder').value;
 
       let list = allProfiles;
       if (filterVal !== 'ALL') {
         list = allProfiles.filter(p => p.companyName === filterVal);
       }
 
-      list.sort((a, b) => {
-        return sortVal === 'AZ' 
-          ? a.companyName.localeCompare(b.companyName) 
-          : b.companyName.localeCompare(a.companyName);
-      });
+      list.sort((a, b) => a.companyName.localeCompare(b.companyName));
 
       if (!list.length) {
         container.innerHTML = '<p class="loading-msg">No companies found.</p>';
@@ -497,6 +492,8 @@ Set-Content "$static\index.html" @'
           statusBadgeClass += ' completed';
         } else if (stateObj.status === 'failed') {
           statusBadgeClass += ' failed';
+        } else {
+          statusBadgeClass += ' idle';
         }
 
         card.innerHTML = `
@@ -548,7 +545,6 @@ Set-Content "$static\index.html" @'
     };
 
     document.getElementById('companyFilter').onchange = render;
-    document.getElementById('sortOrder').onchange = render;
 
     document.getElementById('btnGenerate').onclick = async () => {
       const sb = document.getElementById('sb');
