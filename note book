@@ -1,22 +1,10 @@
-PS C:\Users\143500\Desktop\awscost\awscost> Get-ChildItem -Recurse -Filter "*.xlsx" | Select-Object FullName
+# Create required folders
+New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\template"
+New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\input"
+New-Item -ItemType Directory -Force -Path "C:\Users\143500\costsheet\output"
 
-FullName                                                             
---------                                                             
-C:\Users\143500\Desktop\awscost\awscost\output.xlsx                  
-C:\Users\143500\Desktop\awscost\awscost\src\main\resources\input.xlsx
-C:\Users\143500\Desktop\awscost\awscost\target\classes\input.xlsx    
+# Copy the template file with the correct name
+Copy-Item -Path "C:\Users\143500\Desktop\awscost\awscost\src\main\resources\input.xlsx" `
+          -Destination "C:\Users\143500\costsheet\template\default_template.xlsx"
 
-
-PS C:\Users\143500\Desktop\awscost\awscost> Get-Content (Get-ChildItem -Recurse -Filter "application.properties" | Select-Object -First 1).FullName
-spring.application.name=Aws Cost
-server.servlet.context-path=/awscost
-spring.web.resources.static-locations=classpath:/static/
-excel.template.file.path = C:\\Users\\143500\\costsheet\\template
-excel.template.file.name = template
-excel.input.file.path = C:\\Users\\143500\\costsheet\\input
-excel.input.file.name = input
-excel.output.file.path = C:\\Users\\143500\\costsheet\\output
-excel.output.file.name = output
-server.error.include-message=always
-server.error.include-stacktrace=always
-PS C:\Users\143500\Desktop\awscost\awscost> 
+Write-Host "SUCCESS: All folders created and template copied!" -ForegroundColor Green
