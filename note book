@@ -1,12 +1,35 @@
-Add-Type -AssemblyName System.IO.Compression.FileSystem
-$zip = [System.IO.Compression.ZipFile]::OpenRead("C:\Users\143500\costsheet\template\default_template.xlsx")
-$entry = $zip.GetEntry("xl/workbook.xml")
-$reader = New-Object System.IO.StreamReader($entry.Open())
-$content = $reader.ReadToEnd()
-$reader.Close()
-$zip.Dispose()
-
-# Extract and print just the sheet names
-$matches = [regex]::Matches($content, 'name="([^"]+)"')
-Write-Host "Sheet names found in template:"
-$matches | ForEach-Object { Write-Host " -" $_.Groups[1].Value }
+PS C:\Users\143500\Desktop\awscost\awscost> Add-Type -AssemblyName System.IO.Compression.FileSystem
+PS C:\Users\143500\Desktop\awscost\awscost> $zip = [System.IO.Compression.ZipFile]::OpenRead("C:\Users\143500\costsheet\template\default_template.xlsx")                                                                                                                                                
+PS C:\Users\143500\Desktop\awscost\awscost> $entry = $zip.GetEntry("xl/workbook.xml")
+PS C:\Users\143500\Desktop\awscost\awscost> $reader = New-Object System.IO.StreamReader($entry.Open())
+PS C:\Users\143500\Desktop\awscost\awscost> $content = $reader.ReadToEnd()
+PS C:\Users\143500\Desktop\awscost\awscost> $reader.Close()
+PS C:\Users\143500\Desktop\awscost\awscost> $zip.Dispose()
+PS C:\Users\143500\Desktop\awscost\awscost> 
+PS C:\Users\143500\Desktop\awscost\awscost> # Extract and print just the sheet names
+PS C:\Users\143500\Desktop\awscost\awscost> $matches = [regex]::Matches($content, 'name="([^"]+)"')
+PS C:\Users\143500\Desktop\awscost\awscost> Write-Host "Sheet names found in template:"
+Sheet names found in template:
+PS C:\Users\143500\Desktop\awscost\awscost> $matches | ForEach-Object { Write-Host " -" $_.Groups[1].Value }
+ - Revision
+ - IBX-DEV
+ - DEV-Summary
+ - IBX-SIT
+ - SIT-Summary
+ - IBX-UAT
+ - UAT-Summary
+ - IBX-PREPROD
+ - PREPROD-Summary
+ - IBX-PROD
+ - PROD-Summary
+ - IBX-COMMON
+ - COMMON-Summary
+ - CONSOLIDATED_ACCOUNT-Summary
+ - microsoft.com:RD
+ - microsoft.com:Single
+ - microsoft.com:FV
+ - microsoft.com:CNMTM
+ - microsoft.com:LET_WF
+ - microsoft.com:LAMBDA_WF
+ - microsoft.com:ARRAYTEXT_WF
+PS C:\Users\143500\Desktop\awscost\awscost> 
