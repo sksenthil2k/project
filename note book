@@ -1,38 +1,8 @@
-$javaFile = Get-ChildItem -Recurse -Filter "CostRequest.java" | Select-Object -First 1
-$newContent = @"
-package com.healthproof.intplus.awscost;
+1. Show AdvancedExcelProcessor.java:
 
-public class CostRequest {
-    public String getEnvironment() {
-        return environment != null ? environment : "DEV";
-    }
+powershell
+Get-Content (Get-ChildItem -Recurse -Filter "AdvancedExcelProcessor.java" | Select-Object -First 1).FullName
+2. Show CostController.java:
 
-    public void setEnvironment(String environment) {
-        this.environment = environment;
-    }
-
-    private String environment;
-
-    public String getAccountName() {
-        return accountName != null ? accountName : "IBX";
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-    }
-
-    private String accountName;
-
-    public String getEspCost() {
-        return espCost != null ? espCost : "0";
-    }
-
-    public void setEspCost(String espCost) {
-        this.espCost = espCost;
-    }
-
-    private String espCost;
-}
-"@
-[System.IO.File]::WriteAllText($javaFile.FullName, $newContent)
-Write-Host "SUCCESS: CostRequest.java fully overwritten!" -ForegroundColor Green
+powershell
+Get-Content (Get-ChildItem -Recurse -Filter "CostContorller.java" | Select-Object -First 1).FullName
