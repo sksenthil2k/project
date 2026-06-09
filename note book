@@ -65,17 +65,51 @@ public class CredentialsReader {
 # ---- 3. CostRequest.java ----
 Set-Content "$proj\CostRequest.java" @'
 package com.healthproof.intplus.awscost;
+
 import java.util.List;
+
 public class CostRequest {
     private String companyName;
     private List<String> environments;
     private List<String> profiles;
-    public String getCompanyName() { return companyName != null ? companyName : "IBX"; }
-    public void setCompanyName(String companyName) { this.companyName = companyName; }
+
+    private String environment;
+    private String accountName;
+    private String espCost;
+
+    public String getCompanyName() {
+        return companyName != null ? companyName : "IBX";
+    }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     public List<String> getEnvironments() { return environments; }
     public void setEnvironments(List<String> environments) { this.environments = environments; }
+
     public List<String> getProfiles() { return profiles; }
     public void setProfiles(List<String> profiles) { this.profiles = profiles; }
+
+    public String getEnvironment() {
+        return environment != null ? environment : "DEV";
+    }
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
+
+    public String getAccountName() {
+        return accountName != null ? accountName : "IBX";
+    }
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getEspCost() {
+        return espCost != null ? espCost : "0";
+    }
+    public void setEspCost(String espCost) {
+        this.espCost = espCost;
+    }
 }
 '@
 
