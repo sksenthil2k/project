@@ -2,7 +2,7 @@ $proj = "C:\Users\143500\Desktop\awscost\awscost\src\main\java\com\healthproof\i
 $static = "C:\Users\143500\Desktop\awscost\awscost\src\main\resources\static"
 
 # ---- 1. CompanyProfile.java ----
-Set-Content "$proj\CompanyProfile.java" @"
+Set-Content "$proj\CompanyProfile.java" @'
 package com.healthproof.intplus.awscost;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,10 @@ public class CompanyProfile {
     public void addEnvironment(String env) { environments.add(env); }
     public void addProfile(String profile) { profiles.add(profile); }
 }
-"@
+'@
 
 # ---- 2. CredentialsReader.java ----
-Set-Content "$proj\CredentialsReader.java" @"
+Set-Content "$proj\CredentialsReader.java" @'
 package com.healthproof.intplus.awscost;
 import org.springframework.stereotype.Service;
 import java.io.*;
@@ -60,10 +60,10 @@ public class CredentialsReader {
         return new ArrayList<>(grouped.values());
     }
 }
-"@
+'@
 
 # ---- 3. CostRequest.java ----
-Set-Content "$proj\CostRequest.java" @"
+Set-Content "$proj\CostRequest.java" @'
 package com.healthproof.intplus.awscost;
 import java.util.List;
 public class CostRequest {
@@ -77,10 +77,10 @@ public class CostRequest {
     public List<String> getProfiles() { return profiles; }
     public void setProfiles(List<String> profiles) { this.profiles = profiles; }
 }
-"@
+'@
 
 # ---- 4. CostExplorerDev.java ----
-Set-Content "$proj\awsDev\CostExplorerDev.java" @"
+Set-Content "$proj\awsDev\CostExplorerDev.java" @'
 package com.healthproof.intplus.awscost.awsDev;
 import com.healthproof.intplus.awscost.Model;
 import com.healthproof.intplus.awscost.util.ExcelMapper;
@@ -162,10 +162,10 @@ public class CostExplorerDev {
         model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(ec2));
     }
 }
-"@
+'@
 
 # ---- 5. CostContorller.java ----
-Set-Content "$proj\contorller\CostContorller.java" @"
+Set-Content "$proj\contorller\CostContorller.java" @'
 package com.healthproof.intplus.awscost.contorller;
 import com.healthproof.intplus.awscost.*;
 import com.healthproof.intplus.awscost.awsDev.CostExplorerDev;
@@ -184,7 +184,7 @@ public class CostContorller {
     @Autowired private AdvancedExcelProcessor excelProcessor;
     @Autowired private CostExplorerDev costExplorerDev;
     @Autowired private CredentialsReader credentialsReader;
-    @Value("\${excel.output.file.path}") private String outFilePath;
+    @Value("${excel.output.file.path}") private String outFilePath;
     @GetMapping("/api/profiles")
     public List<CompanyProfile> getProfiles() throws IOException { return credentialsReader.readProfiles(); }
     @PostMapping("/api/generate")
@@ -223,10 +223,10 @@ public class CostContorller {
         }
     }
 }
-"@
+'@
 
 # ---- 6. AdvancedExcelProcessor.java ----
-Set-Content "$proj\excel\AdvancedExcelProcessor.java" @"
+Set-Content "$proj\excel\AdvancedExcelProcessor.java" @'
 package com.healthproof.intplus.awscost.excel;
 import com.healthproof.intplus.awscost.Model;
 import com.healthproof.intplus.awscost.util.ExcelMapper;
@@ -243,11 +243,11 @@ import java.util.*;
 import static com.healthproof.intplus.awscost.util.DateUtil.getRequiredDate;
 @Service
 public class AdvancedExcelProcessor {
-    @Value("\${excel.template.file.path}") private String templateFilePath;
-    @Value("\${excel.template.file.name}") private String templateFileName;
-    @Value("\${excel.input.file.path}") private String inputFilePath;
-    @Value("\${excel.input.file.name}") private String inputFileName;
-    @Value("\${excel.output.file.path}") private String outFilePath;
+    @Value("${excel.template.file.path}") private String templateFilePath;
+    @Value("${excel.template.file.name}") private String templateFileName;
+    @Value("${excel.input.file.path}") private String inputFilePath;
+    @Value("${excel.input.file.name}") private String inputFileName;
+    @Value("${excel.output.file.path}") private String outFilePath;
     private Workbook workbook; private String fileName; private Sheet sheet;
     public String getFileName() { return fileName; }
     public void start(String companyName, List<String> environments, List<Model> models) throws IOException {
@@ -307,7 +307,7 @@ public class AdvancedExcelProcessor {
     private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
     private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
 }
-"@
+'@
 
 # ---- 7. index.html ----
 Set-Content "$static\index.html" @'
