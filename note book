@@ -1,415 +1,89 @@
-$proj = "C:\Users\143500\Desktop\awscost\awscost\src\main\java\com\healthproof\intplus\awscost"
-$static = "C:\Users\143500\Desktop\awscost\awscost\src\main\resources\static"
+"C:\Program Files\OpenLogic\jre-22.0.2.9-hotspot\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.5\lib\idea_rt.jar=60778" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\143500\Desktop\awscost\awscost\target\classes;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.5.4\spring-boot-starter-web-3.5.4.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-starter\3.5.4\spring-boot-starter-3.5.4.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot\3.5.4\spring-boot-3.5.4.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.5.4\spring-boot-autoconfigure-3.5.4.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.5.4\spring-boot-starter-logging-3.5.4.jar;C:\Users\143500\.m2\repository\ch\qos\logback\logback-classic\1.5.18\logback-classic-1.5.18.jar;C:\Users\143500\.m2\repository\ch\qos\logback\logback-core\1.5.18\logback-core-1.5.18.jar;C:\Users\143500\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.24.3\log4j-to-slf4j-2.24.3.jar;C:\Users\143500\.m2\repository\org\slf4j\jul-to-slf4j\2.0.17\jul-to-slf4j-2.0.17.jar;C:\Users\143500\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\143500\.m2\repository\org\springframework\spring-core\6.2.9\spring-core-6.2.9.jar;C:\Users\143500\.m2\repository\org\springframework\spring-jcl\6.2.9\spring-jcl-6.2.9.jar;C:\Users\143500\.m2\repository\org\yaml\snakeyaml\2.4\snakeyaml-2.4.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.5.4\spring-boot-starter-json-3.5.4.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.2\jackson-databind-2.19.2.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.2\jackson-annotations-2.19.2.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.2\jackson-core-2.19.2.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.19.2\jackson-datatype-jdk8-2.19.2.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.19.2\jackson-datatype-jsr310-2.19.2.jar;C:\Users\143500\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.19.2\jackson-module-parameter-names-2.19.2.jar;C:\Users\143500\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.5.4\spring-boot-starter-tomcat-3.5.4.jar;C:\Users\143500\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.43\tomcat-embed-core-10.1.43.jar;C:\Users\143500\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.43\tomcat-embed-el-10.1.43.jar;C:\Users\143500\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.43\tomcat-embed-websocket-10.1.43.jar;C:\Users\143500\.m2\repository\org\springframework\spring-web\6.2.9\spring-web-6.2.9.jar;C:\Users\143500\.m2\repository\org\springframework\spring-beans\6.2.9\spring-beans-6.2.9.jar;C:\Users\143500\.m2\repository\io\micrometer\micrometer-observation\1.15.2\micrometer-observation-1.15.2.jar;C:\Users\143500\.m2\repository\io\micrometer\micrometer-commons\1.15.2\micrometer-commons-1.15.2.jar;C:\Users\143500\.m2\repository\org\springframework\spring-webmvc\6.2.9\spring-webmvc-6.2.9.jar;C:\Users\143500\.m2\repository\org\springframework\spring-aop\6.2.9\spring-aop-6.2.9.jar;C:\Users\143500\.m2\repository\org\springframework\spring-context\6.2.9\spring-context-6.2.9.jar;C:\Users\143500\.m2\repository\org\springframework\spring-expression\6.2.9\spring-expression-6.2.9.jar;C:\Users\143500\.m2\repository\tools\jackson\core\jackson-core\3.1.0\jackson-core-3.1.0.jar;C:\Users\143500\.m2\repository\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\aws-core\2.20.63\aws-core-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\eventstream\eventstream\1.0.1\eventstream-1.0.1.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\annotations\2.20.63\annotations-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\regions\2.20.63\regions-2.20.63.jar;C:\Users\143500\.m2\repository\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\auth\2.20.63\auth-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\profiles\2.20.63\profiles-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\sdk-core\2.20.63\sdk-core-2.20.63.jar;C:\Users\143500\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\http-client-spi\2.20.63\http-client-spi-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\metrics-spi\2.20.63\metrics-spi-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\json-utils\2.20.63\json-utils-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\endpoints-spi\2.20.63\endpoints-spi-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\utils\2.20.63\utils-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\third-party-jackson-core\2.20.63\third-party-jackson-core-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\costexplorer\2.20.63\costexplorer-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\aws-json-protocol\2.20.63\aws-json-protocol-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\protocol-core\2.20.63\protocol-core-2.20.63.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\netty-nio-client\2.20.63\netty-nio-client-2.20.63.jar;C:\Users\143500\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.123.Final\netty-transport-classes-epoll-4.1.123.Final.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\resourcegroupstaggingapi\2.20.63\resourcegroupstaggingapi-2.20.63.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec\4.2.9.Final\netty-codec-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-common\4.1.123.Final\netty-common-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-buffer\4.1.123.Final\netty-buffer-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-transport\4.1.123.Final\netty-transport-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-resolver\4.1.123.Final\netty-resolver-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-base\4.2.9.Final\netty-codec-base-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-compression\4.2.9.Final\netty-codec-compression-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-protobuf\4.2.9.Final\netty-codec-protobuf-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-marshalling\4.2.9.Final\netty-codec-marshalling-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-http\4.2.9.Final\netty-codec-http-4.2.9.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-handler\4.1.123.Final\netty-handler-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.123.Final\netty-transport-native-unix-common-4.1.123.Final.jar;C:\Users\143500\.m2\repository\io\netty\netty-codec-http2\4.2.9.Final\netty-codec-http2-4.2.9.Final.jar;C:\Users\143500\.m2\repository\org\apache\poi\poi\5.2.4\poi-5.2.4.jar;C:\Users\143500\.m2\repository\commons-codec\commons-codec\1.18.0\commons-codec-1.18.0.jar;C:\Users\143500\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\143500\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\143500\.m2\repository\commons-io\commons-io\2.13.0\commons-io-2.13.0.jar;C:\Users\143500\.m2\repository\com\zaxxer\SparseBitSet\1.3\SparseBitSet-1.3.jar;C:\Users\143500\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\143500\.m2\repository\org\apache\poi\poi-ooxml\5.2.4\poi-ooxml-5.2.4.jar;C:\Users\143500\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.4\poi-ooxml-lite-5.2.4.jar;C:\Users\143500\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\143500\.m2\repository\org\apache\commons\commons-compress\1.24.0\commons-compress-1.24.0.jar;C:\Users\143500\.m2\repository\com\github\virtuald\curvesapi\1.08\curvesapi-1.08.jar;C:\Users\143500\.m2\repository\software\amazon\awssdk\apache-client\2.20.63\apache-client-2.20.63.jar;C:\Users\143500\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\143500\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\143500\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar com.healthproof.intplus.awscost.AwsCostApplication
 
-# ---- 1. CompanyProfile.java ----
-Set-Content "$proj\CompanyProfile.java" @'
-package com.healthproof.intplus.awscost;
-import java.util.ArrayList;
-import java.util.List;
-public class CompanyProfile {
-    private String companyName;
-    private List<String> environments = new ArrayList<>();
-    private List<String> profiles = new ArrayList<>();
-    public CompanyProfile(String companyName) { this.companyName = companyName; }
-    public String getCompanyName() { return companyName; }
-    public List<String> getEnvironments() { return environments; }
-    public List<String> getProfiles() { return profiles; }
-    public void addEnvironment(String env) { environments.add(env); }
-    public void addProfile(String profile) { profiles.add(profile); }
-}
-'@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
 
-# ---- 2. CredentialsReader.java ----
-Set-Content "$proj\CredentialsReader.java" @'
-package com.healthproof.intplus.awscost;
-import org.springframework.stereotype.Service;
-import java.io.*;
-import java.util.*;
-@Service
-public class CredentialsReader {
-    private String getCredentialsFilePath() {
-        return System.getProperty("user.home") + File.separator + ".aws" + File.separator + "credentials";
-    }
-    public List<CompanyProfile> readProfiles() throws IOException {
-        Map<String, Map<String, String>> raw = new LinkedHashMap<>();
-        String cur = null;
-        try (BufferedReader r = new BufferedReader(new FileReader(getCredentialsFilePath()))) {
-            String line;
-            while ((line = r.readLine()) != null) {
-                line = line.trim();
-                if (line.startsWith("[") && line.endsWith("]")) {
-                    cur = line.substring(1, line.length() - 1);
-                    raw.put(cur, new LinkedHashMap<>());
-                } else if (cur != null && line.contains("=")) {
-                    String[] p = line.split("=", 2);
-                    raw.get(cur).put(p[0].trim().toLowerCase(), p[1].trim());
-                }
-            }
-        }
-        Map<String, CompanyProfile> grouped = new LinkedHashMap<>();
-        for (Map.Entry<String, Map<String, String>> e : raw.entrySet()) {
-            String pn = e.getKey();
-            String cn = e.getValue().get("company_name");
-            String ev = e.getValue().get("environment");
-            if (cn != null && ev != null) {
-                grouped.computeIfAbsent(cn, CompanyProfile::new);
-                grouped.get(cn).addEnvironment(ev.toUpperCase());
-                grouped.get(cn).addProfile(pn);
-            }
-        }
-        return new ArrayList<>(grouped.values());
-    }
-}
-'@
+ :: Spring Boot ::                (v3.5.4)
 
-# ---- 3. CostRequest.java ----
-Set-Content "$proj\CostRequest.java" @'
-package com.healthproof.intplus.awscost;
+2026-06-09T14:01:16.050+05:30  INFO 13976 --- [Aws Cost] [           main] c.h.intplus.awscost.AwsCostApplication   : Starting AwsCostApplication using Java 22.0.2 with PID 13976 (C:\Users\143500\Desktop\awscost\awscost\target\classes started by 143500 in C:\Users\143500\Desktop\awscost\awscost)
+2026-06-09T14:01:16.062+05:30  INFO 13976 --- [Aws Cost] [           main] c.h.intplus.awscost.AwsCostApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-06-09T14:01:17.136+05:30  INFO 13976 --- [Aws Cost] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-09T14:01:17.150+05:30  INFO 13976 --- [Aws Cost] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-09T14:01:17.152+05:30  INFO 13976 --- [Aws Cost] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2026-06-09T14:01:17.240+05:30  INFO 13976 --- [Aws Cost] [           main] o.a.c.c.C.[.[localhost].[/awscost]       : Initializing Spring embedded WebApplicationContext
+2026-06-09T14:01:17.247+05:30  INFO 13976 --- [Aws Cost] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2026-06-09T14:01:17.378+05:30  INFO 13976 --- [Aws Cost] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-06-09T14:01:17.675+05:30  INFO 13976 --- [Aws Cost] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/awscost'
+2026-06-09T14:01:17.684+05:30  INFO 13976 --- [Aws Cost] [           main] c.h.intplus.awscost.AwsCostApplication   : Started AwsCostApplication in 2.231 seconds (process running for 2.847)
+2026-06-09T14:01:33.169+05:30  INFO 13976 --- [Aws Cost] [nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/awscost]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-09T14:01:33.169+05:30  INFO 13976 --- [Aws Cost] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-09T14:01:33.169+05:30  INFO 13976 --- [Aws Cost] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-09T14:01:35.152+05:30  WARN 13976 --- [Aws Cost] [nio-8080-exec-3] s.a.awssdk.http.apache.ApacheHttpClient  : SSL Certificate verification is disabled. This is not a safe setting and should only be used for testing.
+2026-06-09T14:01:42.633+05:30 ERROR 13976 --- [Aws Cost] [nio-8080-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/awscost] threw exception [Request processing failed: software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@45bf8309: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@18bdc9a: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5592e802: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@6ba027dd: Unable to contact EC2 metadata service.]] with root cause
 
-import java.util.List;
+software.amazon.awssdk.core.exception.SdkClientException: Unable to load region from any of the providers in the chain software.amazon.awssdk.regions.providers.DefaultAwsRegionProviderChain@45bf8309: [software.amazon.awssdk.regions.providers.SystemSettingsRegionProvider@18bdc9a: Unable to load region from system settings. Region must be specified either via environment variable (AWS_REGION) or  system property (aws.region)., software.amazon.awssdk.regions.providers.AwsProfileRegionProvider@5592e802: No region provided in profile: default, software.amazon.awssdk.regions.providers.InstanceProfileRegionProvider@6ba027dd: Unable to contact EC2 metadata service.]
+	at software.amazon.awssdk.core.exception.SdkClientException$BuilderImpl.build(SdkClientException.java:111) ~[sdk-core-2.20.63.jar:na]
+	at software.amazon.awssdk.regions.providers.AwsRegionProviderChain.getRegion(AwsRegionProviderChain.java:70) ~[regions-2.20.63.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.regionFromDefaultProvider(AwsDefaultClientBuilder.java:282) ~[aws-core-2.20.63.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.resolveRegion(AwsDefaultClientBuilder.java:264) ~[aws-core-2.20.63.jar:na]
+	at software.amazon.awssdk.awscore.client.builder.AwsDefaultClientBuilder.finalizeChildConfiguration(AwsDefaultClientBuilder.java:185) ~[aws-core-2.20.63.jar:na]
+	at software.amazon.awssdk.core.client.builder.SdkDefaultClientBuilder.syncClientConfiguration(SdkDefaultClientBuilder.java:183) ~[sdk-core-2.20.63.jar:na]
+	at software.amazon.awssdk.services.costexplorer.DefaultCostExplorerClientBuilder.buildClient(DefaultCostExplorerClientBuilder.java:39) ~[costexplorer-2.20.63.jar:na]
+	at software.amazon.awssdk.services.costexplorer.DefaultCostExplorerClientBuilder.buildClient(DefaultCostExplorerClientBuilder.java:27) ~[costexplorer-2.20.63.jar:na]
+	at software.amazon.awssdk.core.client.builder.SdkDefaultClientBuilder.build(SdkDefaultClientBuilder.java:150) ~[sdk-core-2.20.63.jar:na]
+	at com.healthproof.intplus.awscost.awsDev.CostExplorerDev.init(CostExplorerDev.java:33) ~[classes/:na]
+	at com.healthproof.intplus.awscost.awsDev.CostExplorerDev.start(CostExplorerDev.java:22) ~[classes/:na]
+	at com.healthproof.intplus.awscost.contorller.CostContorller.generate(CostContorller.java:26) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.43.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.9.jar:6.2.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.43.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-public class CostRequest {
-    private String companyName;
-    private List<String> environments;
-    private List<String> profiles;
-
-    private String environment;
-    private String accountName;
-    private String espCost;
-
-    public String getCompanyName() {
-        return companyName != null ? companyName : "IBX";
-    }
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public List<String> getEnvironments() { return environments; }
-    public void setEnvironments(List<String> environments) { this.environments = environments; }
-
-    public List<String> getProfiles() { return profiles; }
-    public void setProfiles(List<String> profiles) { this.profiles = profiles; }
-
-    public String getEnvironment() {
-        return environment != null ? environment : "DEV";
-    }
-    public void setEnvironment(String environment) {
-        this.environment = environment;
-    }
-
-    public String getAccountName() {
-        return accountName != null ? accountName : "IBX";
-    }
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
-    }
-
-    public String getEspCost() {
-        return espCost != null ? espCost : "0";
-    }
-    public void setEspCost(String espCost) {
-        this.espCost = espCost;
-    }
-}
-'@
-
-# ---- 4. CostExplorerDev.java ----
-Set-Content "$proj\awsDev\CostExplorerDev.java" @'
-package com.healthproof.intplus.awscost.awsDev;
-import com.healthproof.intplus.awscost.Model;
-import com.healthproof.intplus.awscost.util.ExcelMapper;
-import org.springframework.stereotype.Service;
-import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
-import software.amazon.awssdk.http.SdkHttpConfigurationOption;
-import software.amazon.awssdk.http.apache.ApacheHttpClient;
-import software.amazon.awssdk.services.costexplorer.CostExplorerClient;
-import software.amazon.awssdk.services.costexplorer.model.*;
-import software.amazon.awssdk.thirdparty.jackson.core.JsonProcessingException;
-import software.amazon.awssdk.utils.AttributeMap;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentDate;
-import static com.healthproof.intplus.awscost.util.DateUtil.getPreviousDate;
-@Service
-public class CostExplorerDev {
-    private CostExplorerClient caClient;
-    private Model model;
-    public Model getModel() { return model; }
-    public void start(String profileName, String environment) throws JsonProcessingException {
-        init(profileName);
-        getH4andH5(); getR12Values(); getNoTagAndCloudWatch(); calculateCommonService(); getRow13Values();
-        System.out.println("********----->: Profile=" + profileName + " | Env=" + environment);
-        model.printR12(); model.printR13(); model.printH4H5(); model.printR14();
-    }
-    private void init(String profileName) throws JsonProcessingException {
-        this.model = new Model();
-        caClient = CostExplorerClient.builder()
-                .credentialsProvider(ProfileCredentialsProvider.create(profileName))
-                .httpClient(ApacheHttpClient.builder().buildWithDefaults(AttributeMap.builder()
-                        .put(SdkHttpConfigurationOption.TRUST_ALL_CERTIFICATES, Boolean.TRUE).build()))
-                .build();
-    }
-    public void getH4andH5() {
-        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost")
-                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("RECORD_TYPE").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
-                g.metrics().forEach((k, v) -> model.getModelMapH4H5().put(g.keys().get(0), v.amount()))));
-    }
-    public void getR12Values() throws JsonProcessingException {
-        Expression ex = Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
-                .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build();
-        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
-                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
-                g.metrics().forEach((k, v) -> model.getModelMapR12().put(g.keys().get(0), v.amount()))));
-    }
-    public void getNoTagAndCloudWatch() {
-        Expression ex = Expression.builder().and(
-                Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
-                        .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build(),
-                Expression.builder().tags(TagValues.builder().key("Product").values("").build()).build()).build();
-        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
-                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("SERVICE").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
-                g.metrics().forEach((k, v) -> model.getModelMapR14().put(g.keys().get(0), v.amount()))));
-    }
-    public void getRow13Values() {
-        Expression ex = Expression.builder().dimensions(DimensionValues.builder().key(Dimension.RECORD_TYPE)
-                .values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build();
-        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
-                .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
-                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
-                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
-                g.metrics().forEach((k, v) -> model.getModelMapR13().put(g.keys().get(0), v.amount()))));
-    }
-    private void calculateCommonService() {
-        double common = new BigDecimal(model.getModelMapR12().get(ExcelMapper.COMMON).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
-        double total = new BigDecimal(model.getModelMapR12().get(ExcelMapper.NO_KEY_PRODUCT).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
-        double ec2 = total - new BigDecimal(model.getModelMapR14().get(ExcelMapper.Y12).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue() + common;
-        model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(ec2));
-    }
-}
-'@
-
-# ---- 5. CostContorller.java ----
-Set-Content "$proj\contorller\CostContorller.java" @'
-package com.healthproof.intplus.awscost.contorller;
-import com.healthproof.intplus.awscost.*;
-import com.healthproof.intplus.awscost.awsDev.CostExplorerDev;
-import com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
-import java.io.*;
-import java.util.*;
-import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentTimeStamp;
-import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_FILE_NAME;
-import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_PATH;
-@RestController
-public class CostContorller {
-    @Autowired private AdvancedExcelProcessor excelProcessor;
-    @Autowired private CostExplorerDev costExplorerDev;
-    @Autowired private CredentialsReader credentialsReader;
-    @Value("${excel.output.file.path}") private String outFilePath;
-    @GetMapping("/api/profiles")
-    public List<CompanyProfile> getProfiles() throws IOException { return credentialsReader.readProfiles(); }
-    @PostMapping("/api/generate")
-    public Map<String, Serializable> generate(@RequestBody CostRequest request) throws Exception {
-        List<Model> models = new ArrayList<>();
-        for (int i = 0; i < request.getProfiles().size(); i++) {
-            costExplorerDev.start(request.getProfiles().get(i), request.getEnvironments().get(i));
-            models.add(costExplorerDev.getModel());
-        }
-        excelProcessor.start(request.getCompanyName(), request.getEnvironments(), models);
-        return Map.of("id","1","message","Report generated!","code",200,
-                "timeStamp",getCurrentTimeStamp(),"fileName",excelProcessor.getFileName(),"status","success");
-    }
-    @GetMapping("/downloads/{filename}")
-    public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) throws IOException {
-        File file = new File(outFilePath + File.separator + filename);
-        try (FileInputStream fis = new FileInputStream(file); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
-            byte[] buf = new byte[(int)file.length()]; int n;
-            while ((n = fis.read(buf)) != -1) bos.write(buf, 0, n);
-            return ResponseEntity.ok()
-                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
-                    .body(bos.toByteArray());
-        }
-    }
-    @PostMapping("/downloads")
-    public ResponseEntity<byte[]> downloadFilePost(@RequestBody DownloadRequest req) throws IOException {
-        File file = new File(OUTPUT_PATH + OUTPUT_FILE_NAME);
-        try (FileInputStream fis = new FileInputStream(file); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
-            byte[] buf = new byte[(int)file.length()]; int n;
-            while ((n = fis.read(buf)) != -1) bos.write(buf, 0, n);
-            return ResponseEntity.ok()
-                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
-                    .body(bos.toByteArray());
-        }
-    }
-}
-'@
-
-# ---- 6. AdvancedExcelProcessor.java ----
-Set-Content "$proj\excel\AdvancedExcelProcessor.java" @'
-package com.healthproof.intplus.awscost.excel;
-import com.healthproof.intplus.awscost.Model;
-import com.healthproof.intplus.awscost.util.ExcelMapper;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellReference;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-import java.io.*;
-import java.math.*;
-import java.nio.file.*;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import static com.healthproof.intplus.awscost.util.DateUtil.getRequiredDate;
-@Service
-public class AdvancedExcelProcessor {
-    @Value("${excel.template.file.path}") private String templateFilePath;
-    @Value("${excel.template.file.name}") private String templateFileName;
-    @Value("${excel.input.file.path}") private String inputFilePath;
-    @Value("${excel.input.file.name}") private String inputFileName;
-    @Value("${excel.output.file.path}") private String outFilePath;
-    private Workbook workbook; private String fileName; private Sheet sheet;
-    public String getFileName() { return fileName; }
-    public void start(String companyName, List<String> environments, List<Model> models) throws IOException {
-        String tp = templateFilePath+File.separator+companyName.toLowerCase()+"_"+templateFileName+ExcelMapper.FILE_EXTENSION;
-        try (InputStream fis = new FileInputStream(tp)) { workbook = new XSSFWorkbook(fis); workbook.setForceFormulaRecalculation(true); }
-        for (int i = 0; i < environments.size(); i++) {
-            String env = environments.get(i); Model model = models.get(i);
-            sheet = workbook.getSheet(companyName.toUpperCase()+"-"+env.toUpperCase());
-            if (sheet == null) { System.out.println("Sheet not found: "+companyName.toUpperCase()+"-"+env.toUpperCase()); continue; }
-            initSheet(companyName, env);
-            writeH4H5(model.getModelMapH4H5(), companyName, env);
-            writeR12(model.getModelMapR12(), companyName, env);
-            writeR14(model.getModelMapR14(), companyName, env);
-            writeR13(model.getModelMapR13(), companyName, env);
-            writeESPCost();
-        }
-        this.fileName = generateVersionedFileName(companyName);
-        writeExcel(); copyFileToInputDirectory();
-    }
-    private String generateVersionedFileName(String companyName) {
-        String base = "USTHP_"+companyName+"_AWS_SERVICE_COST_"+new SimpleDateFormat("MMM").format(new Date()).toUpperCase()+new SimpleDateFormat("yy").format(new Date())+"-V";
-        File[] ex = new File(outFilePath).listFiles((d,n)->n.startsWith(base)&&n.endsWith(ExcelMapper.FILE_EXTENSION));
-        int v=1; if(ex!=null) for(File f:ex){try{int x=Integer.parseInt(f.getName().substring(base.length(),f.getName().length()-ExcelMapper.FILE_EXTENSION.length()));if(x>=v)v=x+1;}catch(Exception ignored){}}
-        return base+v+ExcelMapper.FILE_EXTENSION;
-    }
-    private boolean check(String c,String e){return sheet!=null&&sheet.getSheetName().equals(c.toUpperCase()+"-"+e.toUpperCase());}
-    private void initSheet(String c,String e){
-        if(!check(c,e))return;
-        setStr("H3",getRequiredDate());setNum("H4",0);setNum("H5",0);setNum("H6",0);
-        for(int i=1;i<27;i++){sheet.getRow(11).getCell(i).setCellValue(0);sheet.getRow(12).getCell(i).setCellValue(0);sheet.getRow(13).getCell(i).setCellValue(0);}
-    }
-    public void writeH4H5(Map m,String c,String e){if(!check(c,e))return;setNum("H4",bd(val(m,ExcelMapper.H4)));setNum("H5",bd(val(m,ExcelMapper.H5)));}
-    public void writeR12(Map m,String c,String e){
-        if(!check(c,e))return;
-        setNum("B12",bd(val(m,ExcelMapper.B12)));setNum("C12",bd(val(m,ExcelMapper.C12)));setNum("D12",bd(val(m,ExcelMapper.D12)));
-        setNum("H12",bd(val(m,ExcelMapper.H12)));setNum("I12",bd(val(m,ExcelMapper.I12)));setNum("J12",bd(val(m,ExcelMapper.J12)));
-        setNum("K12",bd(val(m,ExcelMapper.K12)));setNum("N12",bd(val(m,ExcelMapper.N12)));setNum("O12",bd(val(m,ExcelMapper.O12)));
-        setNum("P12",bd(val(m,ExcelMapper.P12)));setNum("Q12",bd(val(m,ExcelMapper.Q12)));setNum("R12",bd(val(m,ExcelMapper.R12)));
-        setNum("S12",bd(val(m,ExcelMapper.S12)));setNum("T12",bd(val(m,ExcelMapper.T12)));setNum("U12",bd(val(m,ExcelMapper.U12)));
-        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("PROD"))setNum("U12",bd(val(m,ExcelMapper.U12_1)));
-        setNum("V12",bd(val(m,ExcelMapper.V12)));
-    }
-    public void writeR14(Map m,String c,String e){if(!check(c,e))return;setNum("W12",bd(val(m,ExcelMapper.W12)));setNum("Y12",bd(val(m,ExcelMapper.Y12)));}
-    public void writeR13(Map m,String c,String e){
-        if(!check(c,e))return;
-        setNum("B13",bd(val(m,ExcelMapper.B13)));setNum("C13",bd(val(m,ExcelMapper.C13)));setNum("D13",bd(val(m,ExcelMapper.D13)));
-        setNum("H13",bd(val(m,ExcelMapper.H13)));setNum("I13",bd(val(m,ExcelMapper.I13)));setNum("J13",bd(val(m,ExcelMapper.J13)));
-        setNum("K13",bd(val(m,ExcelMapper.K13)));setNum("N13",bd(val(m,ExcelMapper.N13)));setNum("O13",bd(val(m,ExcelMapper.O13)));
-        setNum("P13",bd(val(m,ExcelMapper.P13)));setNum("Q13",bd(val(m,ExcelMapper.Q13)));setNum("Y13",bd(val(m,ExcelMapper.Y13)));
-        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("CS"))setNum("W13",bd(val(m,ExcelMapper.W13)));
-    }
-    private void writeESPCost(){setNum("H6",0);setNum("AA12",0);}
-    private double bd(String v){return new BigDecimal(v).setScale(2,RoundingMode.HALF_UP).doubleValue();}
-    private String val(Map<String,String> m,String k){return m.get(k)!=null?m.get(k).toString():"0";}
-    private void setNum(String ref,double v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)return;c.setCellValue(v);}
-    private void setStr(String ref,String v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)return;c.setCellValue(v);}
-    private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
-    private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
-}
-'@
-
-# ---- 7. index.html ----
-Set-Content "$static\index.html" @'
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>USTHP AWS Cost Report</title>
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:"Segoe UI",sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px;color:#fff}
-    .header{text-align:center;margin-bottom:40px}
-    .header h1{font-size:2rem;letter-spacing:2px;background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .header p{color:#94a3b8;margin-top:8px}
-    .buttons-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;max-width:900px;width:100%}
-    .company-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 30px;text-align:center;cursor:pointer;transition:all .3s;min-width:220px;backdrop-filter:blur(10px)}
-    .company-card:hover{background:rgba(167,139,250,.15);border-color:#a78bfa;transform:translateY(-4px);box-shadow:0 12px 30px rgba(167,139,250,.3)}
-    .company-name{font-size:1.4rem;font-weight:700;color:#a78bfa;margin-bottom:8px}
-    .env-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-    .env-tag{background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);border-radius:20px;padding:3px 12px;font-size:.75rem;color:#60a5fa;font-weight:600}
-    .spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#a78bfa;border-radius:50%;animation:spin .8s linear infinite;margin-top:10px}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .status-box{margin-top:36px;max-width:600px;width:100%;border-radius:12px;padding:20px 24px;display:none}
-    .status-box.success{display:block;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:#34d399}
-    .status-box.error{display:block;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);color:#f87171}
-    .download-btn{display:inline-block;margin-top:12px;padding:10px 24px;background:linear-gradient(90deg,#a78bfa,#60a5fa);border-radius:8px;color:#fff;font-weight:600;text-decoration:none}
-    .loading-msg{color:#94a3b8;margin-top:30px;font-size:.9rem}
-  </style>
-</head>
-<body>
-  <div class="header"><h1>USTHP AWS Cost Report</h1><p>Select a company to generate the monthly cost report</p></div>
-  <div class="buttons-container" id="bc"><p class="loading-msg">Loading companies...</p></div>
-  <div class="status-box" id="sb"></div>
-  <script>
-    async function load(){
-      try{
-        const profiles=await (await fetch('/awscost/api/profiles')).json();
-        const c=document.getElementById('bc'); c.innerHTML='';
-        if(!profiles||!profiles.length){c.innerHTML='<p class="loading-msg">No companies found in credentials file.</p>';return;}
-        profiles.forEach(p=>{
-          const card=document.createElement('div'); card.className='company-card';
-          card.innerHTML='<div class="company-name">'+p.companyName+'</div><div class="env-tags">'+p.environments.map(e=>'<span class="env-tag">'+e+'</span>').join('')+'</div>';
-          card.onclick=()=>gen(p,card); c.appendChild(card);
-        });
-      }catch(e){document.getElementById('bc').innerHTML='<p class="loading-msg" style="color:#f87171">Failed to load profiles.</p>';}
-    }
-    async function gen(p,card){
-      const sb=document.getElementById('sb'); card.innerHTML+='<div class="spinner"></div>'; card.style.pointerEvents='none'; sb.className='status-box'; sb.innerHTML='';
-      try{
-        const data=await (await fetch('/awscost/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({companyName:p.companyName,environments:p.environments,profiles:p.profiles})})).json();
-        if(data.status==='success'){sb.className='status-box success';sb.innerHTML='<strong>&#10003; Report Generated!</strong><br/>File: <strong>'+data.fileName+'</strong><br/><a class="download-btn" href="/awscost/downloads/'+data.fileName+'">&#8595; Download Excel</a>';}
-        else throw new Error(data.message||'Failed');
-      }catch(e){sb.className='status-box error';sb.innerHTML='<strong>&#10007; Error:</strong> '+e.message;}
-      finally{await load();}
-    }
-    load();
-  </script>
-</body>
-</html>
-'@
-
-Write-Host ""
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "  ALL 7 FILES DEPLOYED SUCCESSFULLY!  " -ForegroundColor Green
-Write-Host "========================================" -ForegroundColor Cyan
-Write-Host ""
-Write-Host "Next steps:" -ForegroundColor Yellow
-Write-Host "1. Update C:\Users\143500\.aws\credentials - add company_name and environment to each profile" -ForegroundColor Yellow
-Write-Host "2. Rebuild Project in IntelliJ (Build -> Rebuild Project)" -ForegroundColor Yellow
-Write-Host "3. Restart the application" -ForegroundColor Yellow
