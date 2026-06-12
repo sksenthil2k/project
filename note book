@@ -128,14 +128,21 @@ import software.amazon.awssdk.thirdparty.jackson.core.JsonProcessingException;
 import software.amazon.awssdk.utils.AttributeMap;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentDate;
 import static com.healthproof.intplus.awscost.util.DateUtil.getPreviousDate;
 @Service
 public class CostExplorerDev {
     private CostExplorerClient caClient;
     private Model model;
+    private List<Map<String, Object>> rawQueriesData;
     public Model getModel() { return model; }
-    public void start(String profileName, String environment) throws JsonProcessingException {
+    public List<Map<String, Object>> getRawQueriesData() { return rawQueriesData; }
+    public void start(String profileName, String environment) throws Exception {
+        this.rawQueriesData = new ArrayList<>();
         init(profileName);
         getH4andH5(); getR12Values(); getNoTagAndCloudWatch(); calculateCommonService(); getRow13Values();
         System.out.println("********----->: Profile=" + profileName + " | Env=" + environment);
@@ -155,7 +162,9 @@ public class CostExplorerDev {
                 .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
                 .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost")
                 .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("RECORD_TYPE").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("H4_H5", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
                 g.metrics().forEach((k, v) -> model.getModelMapH4H5().put(g.keys().get(0), v.amount()))));
     }
     public void getR12Values() throws JsonProcessingException {
@@ -165,7 +174,9 @@ public class CostExplorerDev {
                 .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
                 .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
                 .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R12", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
                 g.metrics().forEach((k, v) -> model.getModelMapR12().put(g.keys().get(0), v.amount()))));
     }
     public void getNoTagAndCloudWatch() {
@@ -177,7 +188,9 @@ public class CostExplorerDev {
                 .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
                 .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
                 .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("SERVICE").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R14", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
                 g.metrics().forEach((k, v) -> model.getModelMapR14().put(g.keys().get(0), v.amount()))));
     }
     public void getRow13Values() {
@@ -187,7 +200,9 @@ public class CostExplorerDev {
                 .timePeriod(DateInterval.builder().start(getPreviousDate()).end(getCurrentDate()).build())
                 .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
                 .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
-        caClient.getCostAndUsage(req).resultsByTime().forEach(r -> r.groups().forEach(g ->
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R13", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
                 g.metrics().forEach((k, v) -> model.getModelMapR13().put(g.keys().get(0), v.amount()))));
     }
     private void calculateCommonService() {
@@ -195,6 +210,37 @@ public class CostExplorerDev {
         double total = new BigDecimal(model.getModelMapR12().get(ExcelMapper.NO_KEY_PRODUCT).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
         double ec2 = total - new BigDecimal(model.getModelMapR14().get(ExcelMapper.Y12).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue() + common;
         model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(ec2));
+    }
+    private void recordRawResponse(String queryName, GetCostAndUsageResponse response) {
+        Map<String, Object> queryRecord = new LinkedHashMap<>();
+        queryRecord.put("queryType", queryName);
+        List<Map<String, Object>> results = new ArrayList<>();
+        if (response != null && response.resultsByTime() != null) {
+            for (ResultByTime result : response.resultsByTime()) {
+                Map<String, Object> timeRecord = new LinkedHashMap<>();
+                timeRecord.put("timePeriod", Map.of("start", result.timePeriod().start(), "end", result.timePeriod().end()));
+                timeRecord.put("estimated", result.estimated());
+                List<Map<String, Object>> groups = new ArrayList<>();
+                if (result.groups() != null) {
+                    for (Group group : result.groups()) {
+                        Map<String, Object> groupRecord = new LinkedHashMap<>();
+                        groupRecord.put("keys", group.keys());
+                        Map<String, Map<String, String>> metrics = new LinkedHashMap<>();
+                        if (group.metrics() != null) {
+                            group.metrics().forEach((k, v) -> {
+                                metrics.put(k, Map.of("amount", v.amount(), "unit", v.unit()));
+                            });
+                        }
+                        groupRecord.put("metrics", metrics);
+                        groups.add(groupRecord);
+                    }
+                }
+                timeRecord.put("groups", groups);
+                results.add(timeRecord);
+            }
+        }
+        queryRecord.put("results", results);
+        rawQueriesData.add(queryRecord);
     }
 }
 '@
@@ -225,13 +271,31 @@ public class CostContorller {
     @PostMapping("/api/generate")
     public Map<String, Serializable> generate(@RequestBody CostRequest request) throws Exception {
         List<Model> models = new ArrayList<>();
+        Map<String, List<Map<String, Object>>> allRawData = new LinkedHashMap<>();
         for (int i = 0; i < request.getProfiles().size(); i++) {
-            costExplorerDev.start(request.getProfiles().get(i), request.getEnvironments().get(i));
+            String profile = request.getProfiles().get(i);
+            String env = request.getEnvironments().get(i);
+            costExplorerDev.start(profile, env);
             models.add(costExplorerDev.getModel());
+            allRawData.put(profile, costExplorerDev.getRawQueriesData());
         }
         excelProcessor.start(request.getCompanyName(), request.getEnvironments(), models);
+        saveRawDataJson(excelProcessor.getFileName(), allRawData);
         return Map.of("id","1","message","Report generated!","code",200,
                 "timeStamp",getCurrentTimeStamp(),"fileName",excelProcessor.getFileName(),"status","success");
+    }
+    private void saveRawDataJson(String excelFileName, Object data) {
+        try {
+            if (excelFileName == null || !excelFileName.contains(".")) return;
+            String jsonFileName = excelFileName.substring(0, excelFileName.lastIndexOf(".")) + ".json";
+            File jsonFile = new File(outFilePath + File.separator + jsonFileName);
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, data);
+            System.out.println("Consolidated Raw AWS data saved to: " + jsonFile.getAbsolutePath());
+        } catch (Exception e) {
+            System.err.println("Failed to save raw AWS data JSON: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
     @GetMapping("/downloads/{filename}")
     public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) throws IOException {
