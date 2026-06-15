@@ -62,7 +62,19 @@ public class AdvancedExcelProcessor {
         setNum("P12",bd(val(m,ExcelMapper.P12)));setNum("Q12",bd(val(m,ExcelMapper.Q12)));setNum("R12",bd(val(m,ExcelMapper.R12)));
         setNum("S12",bd(val(m,ExcelMapper.S12)));setNum("T12",bd(val(m,ExcelMapper.T12)));setNum("U12",bd(val(m,ExcelMapper.U12)));
         if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("PROD"))setNum("U12",bd(val(m,ExcelMapper.U12_1)));
-        setNum("V12",bd(val(m,ExcelMapper.V12)));setNum("AA12",bd(val(m,ExcelMapper.AA12)));
+        setNum("V12",bd(val(m,ExcelMapper.V12)));
+        String emRawVal = val(m, ExcelMapper.AA12);
+        double emVal = bd(emRawVal);
+        System.out.println("===== EM DEBUG =====");
+        System.out.println("ExcelMapper.AA12 key = [" + ExcelMapper.AA12 + "]");
+        System.out.println("val() returned = [" + emRawVal + "]");
+        System.out.println("bd() converted = [" + emVal + "]");
+        System.out.println("Map keys available: " + m.keySet());
+        setNum("AA12", emVal);
+        CellReference dbCr = new CellReference("AA12");
+        Row dbRow = sheet.getRow(dbCr.getRow());
+        if(dbRow!=null){Cell dbCell=dbRow.getCell(dbCr.getCol());System.out.println("AA12 cell after write = " + (dbCell!=null?dbCell.getNumericCellValue():"NULL CELL") + " | type=" + (dbCell!=null?dbCell.getCellType():"N/A"));}
+        System.out.println("===== END EM DEBUG =====");
     }
     public void writeR14(Map m,String c,String e){if(!check(c,e))return;setNum("W12",bd(val(m,ExcelMapper.W12)));setNum("Y12",bd(val(m,ExcelMapper.Y12)));}
     public void writeR13(Map m,String c,String e){
