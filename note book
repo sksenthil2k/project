@@ -1,54 +1,156 @@
+Set-Content "src\main\java\com\healthproof\intplus\awscost\awsDev\CostExplorerDev.java" @'
+package com.healthproof.intplus.awscost.awsDev;
+import com.healthproof.intplus.awscost.Model;
+import com.healthproof.intplus.awscost.util.ExcelMapper;
+import org.springframework.stereotype.Service;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.http.SdkHttpConfigurationOption;
+import software.amazon.awssdk.http.apache.ApacheHttpClient;
+import software.amazon.awssdk.services.costexplorer.CostExplorerClient;
+import software.amazon.awssdk.services.costexplorer.model.*;
+import software.amazon.awssdk.thirdparty.jackson.core.JsonProcessingException;
+import software.amazon.awssdk.utils.AttributeMap;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
-java.lang.NullPointerException: Cannot invoke "String.toString()" because the return value of "java.util.Map.get(Object)" is null
-	at com.healthproof.intplus.awscost.awsDev.CostExplorerDev.calculateCommonService(CostExplorerDev.java:111) ~[classes/:na]
-	at com.healthproof.intplus.awscost.awsDev.CostExplorerDev.start(CostExplorerDev.java:35) ~[classes/:na]
-	at com.healthproof.intplus.awscost.contorller.CostContorller.generate(CostContorller.java:40) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.43.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.43.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+@Service
+public class CostExplorerDev {
+    private CostExplorerClient caClient;
+    private Model model;
+    private List<Map<String, Object>> rawQueriesData;
+    private String startDate;
+    private String endDate;
 
+    public Model getModel() { return model; }
+    public List<Map<String, Object>> getRawQueriesData() { return rawQueriesData; }
+
+    public void start(String profileName, String environment, String startDate, String endDate) throws Exception {
+        this.rawQueriesData = new ArrayList<>();
+        this.startDate = startDate;
+        this.endDate = endDate;
+        init(profileName);
+        getH4andH5(); getR12Values(); getNoTagAndCloudWatch(); calculateCommonService(); getRow13Values();
+        System.out.println("********----->: Profile=" + profileName + " | Env=" + environment);
+        model.printR12(); model.printR13(); model.printH4H5(); model.printR14();
+    }
+
+    private void init(String profileName) throws JsonProcessingException {
+        this.model = new Model();
+        caClient = CostExplorerClient.builder()
+                .credentialsProvider(ProfileCredentialsProvider.create(profileName))
+                .region(software.amazon.awssdk.regions.Region.US_EAST_1)
+                .httpClient(ApacheHttpClient.builder().buildWithDefaults(AttributeMap.builder()
+                        .put(SdkHttpConfigurationOption.TRUST_ALL_CERTIFICATES, Boolean.TRUE).build()))
+                .build();
+    }
+
+    private static String stripTag(String key) {
+        return (key != null && key.startsWith("Product$")) ? key.substring("Product$".length()) : (key != null ? key : "");
+    }
+
+    private static double safeDouble(Map<String, String> map, String key) {
+        Object val = map.get(key);
+        if (val == null) return 0.0;
+        try { return new BigDecimal(val.toString()).setScale(2, RoundingMode.HALF_UP).doubleValue(); }
+        catch (Exception e) { return 0.0; }
+    }
+
+    public void getH4andH5() {
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost")
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("RECORD_TYPE").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("H4_H5", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapH4H5().put(g.keys().get(0), v.amount()))));
+    }
+
+    public void getR12Values() throws JsonProcessingException {
+        Expression ex = Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
+                .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R12", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR12().put(stripTag(g.keys().get(0)), v.amount()))));
+    }
+
+    public void getNoTagAndCloudWatch() {
+        Expression ex = Expression.builder().and(
+                Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
+                        .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build(),
+                Expression.builder().tags(TagValues.builder().key("Product").values("").build()).build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("SERVICE").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R14", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR14().put(g.keys().get(0), v.amount()))));
+    }
+
+    public void getRow13Values() {
+        Expression ex = Expression.builder().dimensions(DimensionValues.builder().key(Dimension.RECORD_TYPE)
+                .values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R13", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR13().put(stripTag(g.keys().get(0)), v.amount()))));
+    }
+
+    private void calculateCommonService() {
+        String commonKey = stripTag(ExcelMapper.COMMON);
+        String noKeyProductKey = stripTag(ExcelMapper.NO_KEY_PRODUCT);
+        double common = safeDouble(model.getModelMapR12(), commonKey);
+        double total = safeDouble(model.getModelMapR12(), noKeyProductKey);
+        double y12 = safeDouble(model.getModelMapR14(), ExcelMapper.Y12);
+        double ec2 = total - y12 + common;
+        model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(ec2));
+    }
+
+    private void recordRawResponse(String queryName, GetCostAndUsageResponse response) {
+        Map<String, Object> queryRecord = new LinkedHashMap<>();
+        queryRecord.put("queryType", queryName);
+        List<Map<String, Object>> results = new ArrayList<>();
+        if (response != null && response.resultsByTime() != null) {
+            for (ResultByTime result : response.resultsByTime()) {
+                Map<String, Object> timeRecord = new LinkedHashMap<>();
+                timeRecord.put("timePeriod", Map.of("start", result.timePeriod().start(), "end", result.timePeriod().end()));
+                timeRecord.put("estimated", result.estimated());
+                List<Map<String, Object>> groups = new ArrayList<>();
+                if (result.groups() != null) {
+                    for (Group group : result.groups()) {
+                        Map<String, Object> groupRecord = new LinkedHashMap<>();
+                        groupRecord.put("keys", group.keys());
+                        Map<String, Map<String, String>> metrics = new LinkedHashMap<>();
+                        if (group.metrics() != null) {
+                            group.metrics().forEach((k, v) -> {
+                                metrics.put(k, Map.of("amount", v.amount(), "unit", v.unit()));
+                            });
+                        }
+                        groupRecord.put("metrics", metrics);
+                        groups.add(groupRecord);
+                    }
+                }
+                timeRecord.put("groups", groups);
+                results.add(timeRecord);
+            }
+        }
+        queryRecord.put("results", results);
+        rawQueriesData.add(queryRecord);
+    }
+}
+'@
