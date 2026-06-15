@@ -1,61 +1,97 @@
-2026-06-15T14:31:31.260+05:30 ERROR 29568 --- [Aws Cost] [io-8080-exec-10] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/awscost] threw exception [Request processing failed: java.lang.IllegalArgumentException: partName] with root cause
-
-java.lang.IllegalArgumentException: partName
-	at org.apache.poi.openxml4j.opc.OPCPackage.removePart(OPCPackage.java:989) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at org.apache.poi.openxml4j.opc.PackagePart.getOutputStream(PackagePart.java:526) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at org.apache.poi.xssf.model.CalculationChain.commit(CalculationChain.java:71) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at org.apache.poi.ooxml.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:467) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at org.apache.poi.ooxml.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:472) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at org.apache.poi.ooxml.POIXMLDocument.write(POIXMLDocument.java:221) ~[poi-ooxml-5.2.4.jar:5.2.4]
-	at com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor.writeExcel(AdvancedExcelProcessor.java:101) ~[classes/:na]
-	at com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor.start(AdvancedExcelProcessor.java:42) ~[classes/:na]
-	at com.healthproof.intplus.awscost.contorller.CostContorller.generate(CostContorller.java:44) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.43.jar:6.0]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.9.jar:6.2.9]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.43.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.9.jar:6.2.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.43.jar:10.1.43]
-	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
-
+Set-Content "src\main\java\com\healthproof\intplus\awscost\excel\AdvancedExcelProcessor.java" @'
+package com.healthproof.intplus.awscost.excel;
+import com.healthproof.intplus.awscost.Model;
+import com.healthproof.intplus.awscost.util.ExcelMapper;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellReference;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import java.io.*;
+import java.math.*;
+import java.nio.file.*;
+import java.util.*;
+import static com.healthproof.intplus.awscost.util.DateUtil.getRequiredDate;
+@Service
+public class AdvancedExcelProcessor {
+    @Value("${excel.template.file.path}") private String templateFilePath;
+    @Value("${excel.template.file.name}") private String templateFileName;
+    @Value("${excel.input.file.path}") private String inputFilePath;
+    @Value("${excel.input.file.name}") private String inputFileName;
+    @Value("${excel.output.file.path}") private String outFilePath;
+    private Workbook workbook; private String fileName; private Sheet sheet;
+    public String getFileName() { return fileName; }
+    public void start(String companyName, List<String> environments, List<Model> models, String monthYearName) throws IOException {
+        String tp = templateFilePath+File.separator+companyName.toLowerCase()+"_"+templateFileName+ExcelMapper.FILE_EXTENSION;
+        if (!new File(tp).exists()) { tp = templateFilePath+File.separator+templateFileName+ExcelMapper.FILE_EXTENSION; }
+        try (InputStream fis = new FileInputStream(tp)) { workbook = new XSSFWorkbook(fis); workbook.setForceFormulaRecalculation(true); }
+        for (int i = 0; i < environments.size(); i++) {
+            String env = environments.get(i); Model model = models.get(i);
+            sheet = workbook.getSheet(companyName.toUpperCase()+"-"+env.toUpperCase());
+            if (sheet == null) { System.out.println("Sheet not found: "+companyName.toUpperCase()+"-"+env.toUpperCase()); continue; }
+            initSheet(companyName, env);
+            writeH4H5(model.getModelMapH4H5(), companyName, env);
+            writeR12(model.getModelMapR12(), companyName, env);
+            writeR14(model.getModelMapR14(), companyName, env);
+            writeR13(model.getModelMapR13(), companyName, env);
+            writeESPCost();
+        }
+        this.fileName = generateVersionedFileName(companyName, monthYearName);
+        writeExcel(); copyFileToInputDirectory();
+    }
+    private String generateVersionedFileName(String companyName, String monthYearName) {
+        String base = "USTHP_"+companyName+"_AWS_SERVICE_COST_"+monthYearName+"-V";
+        File[] ex = new File(outFilePath).listFiles((d,n)->n.startsWith(base)&&n.endsWith(ExcelMapper.FILE_EXTENSION));
+        int v=1; if(ex!=null) for(File f:ex){try{int x=Integer.parseInt(f.getName().substring(base.length(),f.getName().length()-ExcelMapper.FILE_EXTENSION.length()));if(x>=v)v=x+1;}catch(Exception ignored){}}
+        return base+v+ExcelMapper.FILE_EXTENSION;
+    }
+    private boolean check(String c,String e){return sheet!=null&&sheet.getSheetName().equals(c.toUpperCase()+"-"+e.toUpperCase());}
+    private void initSheet(String c,String e){
+        if(!check(c,e))return;
+        setStr("H3",getRequiredDate());writeVal("H4",0);writeVal("H5",0);writeVal("H6",0);
+        for(int i=1;i<30;i++){Row r11=sheet.getRow(11);Row r12=sheet.getRow(12);Row r13=sheet.getRow(13);if(r11!=null){Cell cl=r11.getCell(i);if(cl!=null)writeVal(cl,0);}if(r12!=null){Cell cl=r12.getCell(i);if(cl!=null)writeVal(cl,0);}if(r13!=null){Cell cl=r13.getCell(i);if(cl!=null)writeVal(cl,0);}}
+    }
+    // Writes value: if cell is formula → replace with constant formula (=value), else set numeric
+    private void writeVal(Cell c, double v){
+        if(c.getCellType()==CellType.FORMULA){
+            c.setCellFormula(String.valueOf(v));
+        } else {
+            c.setCellValue(v);
+        }
+    }
+    private void writeVal(String ref, double v){
+        CellReference cr=new CellReference(ref);
+        Row r=sheet.getRow(cr.getRow());if(r==null)return;
+        Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());
+        writeVal(c,v);
+    }
+    public void writeH4H5(Map m,String c,String e){if(!check(c,e))return;writeVal("H4",bd(val(m,ExcelMapper.H4)));writeVal("H5",bd(val(m,ExcelMapper.H5)));}
+    public void writeR12(Map m,String c,String e){
+        if(!check(c,e))return;
+        writeVal("B12",bd(val(m,ExcelMapper.B12)));writeVal("C12",bd(val(m,ExcelMapper.C12)));writeVal("D12",bd(val(m,ExcelMapper.D12)));
+        writeVal("H12",bd(val(m,ExcelMapper.H12)));writeVal("I12",bd(val(m,ExcelMapper.I12)));writeVal("J12",bd(val(m,ExcelMapper.J12)));
+        writeVal("K12",bd(val(m,ExcelMapper.K12)));writeVal("N12",bd(val(m,ExcelMapper.N12)));writeVal("O12",bd(val(m,ExcelMapper.O12)));
+        writeVal("P12",bd(val(m,ExcelMapper.P12)));writeVal("Q12",bd(val(m,ExcelMapper.Q12)));writeVal("R12",bd(val(m,ExcelMapper.R12)));
+        writeVal("S12",bd(val(m,ExcelMapper.S12)));writeVal("T12",bd(val(m,ExcelMapper.T12)));writeVal("U12",bd(val(m,ExcelMapper.U12)));
+        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("PROD"))writeVal("U12",bd(val(m,ExcelMapper.U12_1)));
+        writeVal("V12",bd(val(m,ExcelMapper.V12)));writeVal("AA12",bd(val(m,ExcelMapper.AA12)));
+    }
+    public void writeR14(Map m,String c,String e){if(!check(c,e))return;writeVal("W12",bd(val(m,ExcelMapper.W12)));writeVal("Y12",bd(val(m,ExcelMapper.Y12)));}
+    public void writeR13(Map m,String c,String e){
+        if(!check(c,e))return;
+        writeVal("B13",bd(val(m,ExcelMapper.B13)));writeVal("C13",bd(val(m,ExcelMapper.C13)));writeVal("D13",bd(val(m,ExcelMapper.D13)));
+        writeVal("H13",bd(val(m,ExcelMapper.H13)));writeVal("I13",bd(val(m,ExcelMapper.I13)));writeVal("J13",bd(val(m,ExcelMapper.J13)));
+        writeVal("K13",bd(val(m,ExcelMapper.K13)));writeVal("N13",bd(val(m,ExcelMapper.N13)));writeVal("O13",bd(val(m,ExcelMapper.O13)));
+        writeVal("P13",bd(val(m,ExcelMapper.P13)));writeVal("Q13",bd(val(m,ExcelMapper.Q13)));writeVal("R13",bd(val(m,ExcelMapper.N12)));
+        writeVal("S13",bd(val(m,ExcelMapper.O12)));writeVal("Y13",bd(val(m,ExcelMapper.Y13)));writeVal("AA13",bd(val(m,ExcelMapper.AA13)));
+        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("CS"))writeVal("W13",bd(val(m,ExcelMapper.W13)));
+    }
+    private void writeESPCost(){writeVal("H6",0);}
+    private double bd(String v){try{return new BigDecimal(v).setScale(2,RoundingMode.HALF_UP).doubleValue();}catch(Exception e){return 0.0;}}
+    private String val(Map<String,String> m,String k){if(k==null)return "0";Object v=m.get(k);if(v!=null)return v.toString();String stripped=k.startsWith("Product$")?k.substring("Product$".length()):k;Object vs=m.get(stripped);if(vs!=null)return vs.toString();Object vp=m.get("Product$"+k);if(vp!=null)return vp.toString();return "0";}
+    private void setNum(String ref,double v){writeVal(ref,v);}
+    private void setStr(String ref,String v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());c.setCellValue(v);}
+    private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
+    private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
+}
+'@
