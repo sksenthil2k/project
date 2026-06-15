@@ -1,75 +1,3 @@
-Found the problem. Looking at your JSON data and ExcelMapper:
-
-EM suite → AWS tag "Product$EM" → has value $158.64 in R12 and $968.94 in R13
-But in writeESPCost() → setNum("AA12", 0) → hardcoded to zero!
-There's no ExcelMapper constant for EM at all
-And Enterprise Support = "Enterprise Discount Program Discount" which is $0 in your JSON (GHC-SIT has no EDP discount), so that one is genuinely zero for this account.
-
-Run these two commands on your office machine:
-
-Step 1 — Fix ExcelMapper.java (add EM constants):
-
-powershell
-Set-Content "src\main\java\com\healthproof\intplus\awscost\util\ExcelMapper.java" @'
-package com.healthproof.intplus.awscost.util;
-public class ExcelMapper {
-    public static final String TEMPLATE_PATH = "D:\\Users\\266741\\costsheet\\template\\";
-    public static final String TEMPLATE_FILE_NAME ="ibc_template.xlsx";
-    public static final String INPUT_PATH = "D:\\Users\\266741\\costsheet\\input\\";
-    public static final String INPUT_FILE_NAME = "input.xlsx";
-    public static final String OUTPUT_PATH = "D:\\Users\\266741\\costsheet\\output\\";
-    public static final String OUTPUT_FILE_NAME = "output.xlsx";
-    public static final String FILE_EXTENSION=".xlsx";
-    // COMMON
-    public static final String H4 = "Usage";
-    public static final String H5 = "SavingsPlanCoveredUsage";
-    public static final String NO_KEY_PRODUCT ="Product$";
-    public static final String C12 = "Product$IPLUS";
-    public static final String B12 = "Product$IPLUS-API";
-    public static final String K12 = "Product$QLIK-REPLICATE";
-    // should not be included in the environment
-    public static final String U12 = "Product$FSX-VOL1";
-    public static final String COMMON = "Product$COMMON";
-    public static final String J12 ="Product$QLIK-COMPOSE";
-    public static final String H12 = "Product$EDIFECS";
-    public static final String O12 = "Product$DB-SERVER-2";
-    public static final String N12 = "Product$DB-SERVER-1";
-    public static final String W12 = "Common EC2 Services";
-    public static final String Y12 = "AmazonCloudWatch";
-    public static final String C13 = "Product$IPLUS";
-    public static final String B13 = "Product$IPLUS-API";
-    public static final String K13 = "Product$QLIK-REPLICATE";
-    public static final String H13 = "Product$EDIFECS";
-    public static final String O13 = "Product$DB-SERVER-2";
-    public static final String N13 = "Product$DB-SERVER-1";
-    // DEV, should not be included in the UAT
-    public static final String V12 = "Product$FSX-VOL2";
-    // SIT  UAT
-    public static final String D12 = "Product$WPLUS";
-    public static final String D13 = "Product$WPLUS";
-    public static final String I12 = "Product$TABLEAU";
-    public static final String I13 = "Product$TABLEAU";
-    public static final String J13 ="Product$QLIK-COMPOSE";
-    // SIT, UAT
-    public static final String Q12 = "Product$DB-SERVER4";
-    public static final String Q13 = "Product$DB-SERVER4";
-    // UAT
-    public static final String P12 = "Product$DB-SERVER3";
-    public static final String P13 = "Product$DB-SERVER3";
-    public static final String R12 = "Product$RDS-SERVER-1";
-    public static final String S12 = "Product$RDS-SERVER-2";
-    public static final String T12 = "Product$RDS-SERVER-3";
-    public static final String U12_1 = "Product$FSX";
-    public static final String W13 = "Product$COMMON";
-    public static final String Y13 = "Product$";
-    // EM Suite
-    public static final String AA12 = "Product$EM";
-    public static final String AA13 = "Product$EM";
-}
-'@
-Step 2 — Fix AdvancedExcelProcessor.java (write EM value instead of hardcoded 0):
-
-powershell
 Set-Content "src\main\java\com\healthproof\intplus\awscost\excel\AdvancedExcelProcessor.java" @'
 package com.healthproof.intplus.awscost.excel;
 import com.healthproof.intplus.awscost.Model;
@@ -82,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.math.*;
 import java.nio.file.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import static com.healthproof.intplus.awscost.util.DateUtil.getRequiredDate;
 @Service
@@ -124,7 +51,12 @@ public class AdvancedExcelProcessor {
     private void initSheet(String c,String e){
         if(!check(c,e))return;
         setStr("H3",getRequiredDate());setNum("H4",0);setNum("H5",0);setNum("H6",0);
-        for(int i=1;i<27;i++){sheet.getRow(11).getCell(i).setCellValue(0);sheet.getRow(12).getCell(i).setCellValue(0);sheet.getRow(13).getCell(i).setCellValue(0);}
+        for(int i=1;i<30;i++){
+            Row r11=sheet.getRow(11);Row r12=sheet.getRow(12);Row r13=sheet.getRow(13);
+            if(r11!=null){Cell cl=r11.getCell(i);if(cl!=null)cl.setCellValue(0);}
+            if(r12!=null){Cell cl=r12.getCell(i);if(cl!=null)cl.setCellValue(0);}
+            if(r13!=null){Cell cl=r13.getCell(i);if(cl!=null)cl.setCellValue(0);}
+        }
     }
     public void writeH4H5(Map m,String c,String e){if(!check(c,e))return;setNum("H4",bd(val(m,ExcelMapper.H4)));setNum("H5",bd(val(m,ExcelMapper.H5)));}
     public void writeR12(Map m,String c,String e){
@@ -153,19 +85,27 @@ public class AdvancedExcelProcessor {
     private double bd(String v){try{return new BigDecimal(v).setScale(2,RoundingMode.HALF_UP).doubleValue();}catch(Exception e){return 0.0;}}
     private String val(Map<String,String> m,String k){
         if(k==null)return "0";
-        Object v=m.get(k);
-        if(v!=null)return v.toString();
+        Object v=m.get(k);if(v!=null)return v.toString();
         String stripped=k.startsWith("Product$")?k.substring("Product$".length()):k;
-        Object vs=m.get(stripped);
-        if(vs!=null)return vs.toString();
-        Object vp=m.get("Product$"+k);
-        if(vp!=null)return vp.toString();
+        Object vs=m.get(stripped);if(vs!=null)return vs.toString();
+        Object vp=m.get("Product$"+k);if(vp!=null)return vp.toString();
         return "0";
     }
-    private void setNum(String ref,double v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)return;c.setCellValue(v);}
-    private void setStr(String ref,String v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)return;c.setCellValue(v);}
+    private void setNum(String ref,double v){
+        CellReference cr=new CellReference(ref);
+        Row r=sheet.getRow(cr.getRow());if(r==null)return;
+        Cell c=r.getCell(cr.getCol());
+        if(c==null)c=r.createCell(cr.getCol());
+        c.setCellValue(v);
+    }
+    private void setStr(String ref,String v){
+        CellReference cr=new CellReference(ref);
+        Row r=sheet.getRow(cr.getRow());if(r==null)return;
+        Cell c=r.getCell(cr.getCol());
+        if(c==null)c=r.createCell(cr.getCol());
+        c.setCellValue(v);
+    }
     private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
     private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
 }
 '@
-Summary of changes
