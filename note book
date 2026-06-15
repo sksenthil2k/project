@@ -1,9 +1,131 @@
-Please run this command on your office machine PowerShell to show the ExcelMapper.java file content:
+PS C:\Users\143500\Desktop\awscost\awscost> Get-Content "src\main\java\com\healthproof\intplus\awscost\util\ExcelMapper.java"
+package com.healthproof.intplus.awscost.util;
 
-powershell
-Get-Content "src\main\java\com\healthproof\intplus\awscost\util\ExcelMapper.java"
-Or find the file and show it:
+public class ExcelMapper {
 
-powershell
-Get-ChildItem -Recurse -Filter "ExcelMapper.java" | ForEach-Object { Get-Content $_.FullName }
-Why I need this
+    public static final String TEMPLATE_PATH = "D:\\Users\\266741\\costsheet\\template\\";
+    public static final String TEMPLATE_FILE_NAME ="ibc_template.xlsx";
+
+    public static final String INPUT_PATH = "D:\\Users\\266741\\costsheet\\input\\";
+    public static final String INPUT_FILE_NAME = "input.xlsx";
+
+    public static final String OUTPUT_PATH = "D:\\Users\\266741\\costsheet\\output\\";
+    public static final String OUTPUT_FILE_NAME = "output.xlsx";
+
+
+    public static final String FILE_EXTENSION=".xlsx";
+    // COMMON
+    public static final String H4 = "Usage";
+    public static final String H5 = "SavingsPlanCoveredUsage";
+    public static final String NO_KEY_PRODUCT ="Product$";
+    public static final String C12 = "Product$IPLUS";
+    public static final String B12 = "Product$IPLUS-API";
+    public static final String K12 = "Product$QLIK-REPLICATE";
+    // should not be included in the environment
+    public static final String U12 = "Product$FSX-VOL1";
+    public static final String COMMON = "Product$COMMON";
+    public static final String J12 ="Product$QLIK-COMPOSE";
+    public static final String H12 = "Product$EDIFECS";
+    public static final String O12 = "Product$DB-SERVER2";
+    public static final String N12 = "Product$DB-SERVER1";
+    public static final String W12 = "Common EC2 Services";
+    public static final String Y12 = "AmazonCloudWatch";
+    public static final String C13 = "Product$IPLUS";
+    public static final String B13 = "Product$IPLUS-API";
+    public static final String K13 = "Product$QLIK-REPLICATE";
+    public static final String H13 = "Product$EDIFECS";
+    public static final String O13 = "Product$DB-SERVER2";
+    public static final String N13 = "Product$DB-SERVER1";
+
+    // DEV, should not be included in the UAT
+    public static final String V12 = "Product$FSX-VOL2";
+
+    // SIT  UAT
+    public static final String D12 = "Product$WPLUS";
+    public static final String D13 = "Product$WPLUS";
+
+    public static final String I12 = "Product$TABLEAU";
+    public static final String I13 = "Product$TABLEAU";
+    public static final String J13 ="Product$QLIK-COMPOSE";
+    // SIT, UAT
+    public static final String Q12 = "Product$DB-SERVER4";
+    public static final String Q13 = "Product$DB-SERVER4";
+    // UAT
+    public static final String P12 = "Product$DB-SERVER3";
+    public static final String P13 = "Product$DB-SERVER3";
+
+    public static final String R12 = "Product$RDS-SERVER-1";
+    public static final String S12 = "Product$RDS-SERVER-2";
+
+    public static final String T12 = "Product$RDS-SERVER-3";
+    public static final String U12_1 = "Product$FSX";
+    public static final String W13 = "Product$COMMON";
+    public static final String Y13 = "Product$";
+
+}
+PS C:\Users\143500\Desktop\awscost\awscost> Get-ChildItem -Recurse -Filter "ExcelMapper.java" | ForEach-Object { Get-Content $_.FullName }
+package com.healthproof.intplus.awscost.util;
+
+public class ExcelMapper {
+
+    public static final String TEMPLATE_PATH = "D:\\Users\\266741\\costsheet\\template\\";
+    public static final String TEMPLATE_FILE_NAME ="ibc_template.xlsx";
+
+    public static final String INPUT_PATH = "D:\\Users\\266741\\costsheet\\input\\";
+    public static final String INPUT_FILE_NAME = "input.xlsx";
+
+    public static final String OUTPUT_PATH = "D:\\Users\\266741\\costsheet\\output\\";
+    public static final String OUTPUT_FILE_NAME = "output.xlsx";
+
+
+    public static final String FILE_EXTENSION=".xlsx";
+    // COMMON
+    public static final String H4 = "Usage";
+    public static final String H5 = "SavingsPlanCoveredUsage";
+    public static final String NO_KEY_PRODUCT ="Product$";
+    public static final String C12 = "Product$IPLUS";
+    public static final String B12 = "Product$IPLUS-API";
+    public static final String K12 = "Product$QLIK-REPLICATE";
+    // should not be included in the environment
+    public static final String U12 = "Product$FSX-VOL1";
+    public static final String COMMON = "Product$COMMON";
+    public static final String J12 ="Product$QLIK-COMPOSE";
+    public static final String H12 = "Product$EDIFECS";
+    public static final String O12 = "Product$DB-SERVER2";
+    public static final String N12 = "Product$DB-SERVER1";
+    public static final String W12 = "Common EC2 Services";
+    public static final String Y12 = "AmazonCloudWatch";
+    public static final String C13 = "Product$IPLUS";
+    public static final String B13 = "Product$IPLUS-API";
+    public static final String K13 = "Product$QLIK-REPLICATE";
+    public static final String H13 = "Product$EDIFECS";
+    public static final String O13 = "Product$DB-SERVER2";
+    public static final String N13 = "Product$DB-SERVER1";
+
+    // DEV, should not be included in the UAT
+    public static final String V12 = "Product$FSX-VOL2";
+
+    // SIT  UAT
+    public static final String D12 = "Product$WPLUS";
+    public static final String D13 = "Product$WPLUS";
+
+    public static final String I12 = "Product$TABLEAU";
+    public static final String I13 = "Product$TABLEAU";
+    public static final String J13 ="Product$QLIK-COMPOSE";
+    // SIT, UAT
+    public static final String Q12 = "Product$DB-SERVER4";
+    public static final String Q13 = "Product$DB-SERVER4";
+    // UAT
+    public static final String P12 = "Product$DB-SERVER3";
+    public static final String P13 = "Product$DB-SERVER3";
+
+    public static final String R12 = "Product$RDS-SERVER-1";
+    public static final String S12 = "Product$RDS-SERVER-2";
+
+    public static final String T12 = "Product$RDS-SERVER-3";
+    public static final String U12_1 = "Product$FSX";
+    public static final String W13 = "Product$COMMON";
+    public static final String Y13 = "Product$";
+
+}
+PS C:\Users\143500\Desktop\awscost\awscost> 
