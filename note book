@@ -1,10 +1,10 @@
 {
-  "GHC_SIT" : [ {
+  "PHC" : [ {
     "queryType" : "H4_H5",
     "results" : [ {
       "timePeriod" : {
-        "end" : "2026-06-01",
-        "start" : "2026-05-01"
+        "start" : "2026-05-01",
+        "end" : "2026-06-01"
       },
       "estimated" : false,
       "groups" : [ {
@@ -20,7 +20,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "2475.0915216067"
+            "amount" : "2.1835007641"
           }
         }
       }, {
@@ -36,7 +36,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "16.98"
+            "amount" : "3.23"
           }
         }
       }, {
@@ -44,7 +44,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "3725.8282729748"
+            "amount" : "1410.6933652664"
           }
         }
       } ]
@@ -53,8 +53,8 @@
     "queryType" : "R12",
     "results" : [ {
       "timePeriod" : {
-        "end" : "2026-06-01",
-        "start" : "2026-05-01"
+        "start" : "2026-05-01",
+        "end" : "2026-06-01"
       },
       "estimated" : false,
       "groups" : [ {
@@ -62,7 +62,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "165.3733488848"
+            "amount" : "57.3845969769"
           }
         }
       }, {
@@ -70,79 +70,15 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "325.6044959177"
+            "amount" : "101.6974902439"
           }
         }
       }, {
-        "keys" : [ "Product$DB-SERVER-1" ],
+        "keys" : [ "Product$DB-SERVER1" ],
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "775.3795850865"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER-2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1749.7594558828"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "123.7161635825"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EM" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "158.6435423668"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "108.1384984343"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "128.0706121433"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "40.6586245882"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "65.6421088595"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "62.1439041668"
+            "amount" : "1225.538173667"
           }
         }
       }, {
@@ -150,7 +86,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "39.6779330616"
+            "amount" : "29.3031043786"
           }
         }
       } ]
@@ -159,24 +95,16 @@
     "queryType" : "R14",
     "results" : [ {
       "timePeriod" : {
-        "end" : "2026-06-01",
-        "start" : "2026-05-01"
+        "start" : "2026-05-01",
+        "end" : "2026-06-01"
       },
       "estimated" : false,
       "groups" : [ {
-        "keys" : [ "AWS CloudShell" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000001322"
-          }
-        }
-      }, {
         "keys" : [ "AWS CloudTrail" ],
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0"
+            "amount" : "14.7116326"
           }
         }
       }, {
@@ -188,19 +116,11 @@
           }
         }
       }, {
-        "keys" : [ "AWS Directory Service" ],
+        "keys" : [ "AWS Glue" ],
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "10.7718118838"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],  
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.00007406"
+            "amount" : "0.000079695"
           }
         }
       }, {
@@ -208,7 +128,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0002737322"
+            "amount" : "0.0005474934"
           }
         }
       }, {
@@ -216,15 +136,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "3.2585333636"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
+            "amount" : "0.01177554"
           }
         }
       }, {
@@ -232,7 +144,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.00089355"
+            "amount" : "0.0005635"
           }
         }
       }, {
@@ -240,7 +152,15 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0000181248"
+            "amount" : "0.0000177118"
+          }
+        }
+      }, {
+        "keys" : [ "AWS X-Ray" ],
+        "metrics" : {
+          "NetAmortizedCost" : {
+            "unit" : "USD",
+            "amount" : "0.0010626"
           }
         }
       }, {
@@ -248,7 +168,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0030969034"
+            "amount" : "0.0000421424"
           }
         }
       }, {
@@ -256,7 +176,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0540359493"
+            "amount" : "0.8380401864"
           }
         }
       }, {
@@ -276,19 +196,11 @@
           }
         }
       }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "22.25970828"
-          }
-        }
-      }, {
         "keys" : [ "Amazon Glacier" ],
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0000000458"
+            "amount" : "0.000000078"
           }
         }
       }, {
@@ -296,23 +208,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "46.5761897676"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Route 53" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0805"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.007246378"
+            "amount" : "3.7375186451"
           }
         }
       }, {
@@ -320,7 +216,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0000002255"
+            "amount" : "0.000000272"
           }
         }
       }, {
@@ -328,7 +224,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0001043739"
+            "amount" : "0.0000489428"
           }
         }
       }, {
@@ -336,7 +232,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.1194375895"
+            "amount" : "0.0717630229"
           }
         }
       }, {
@@ -344,7 +240,15 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "0.0000151303"
+            "amount" : "0.0000134235"
+          }
+        }
+      }, {
+        "keys" : [ "Amazon Virtual Private Cloud" ],
+        "metrics" : {
+          "NetAmortizedCost" : {
+            "unit" : "USD",
+            "amount" : "32.9810287685"
           }
         }
       }, {
@@ -352,7 +256,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "64.2471093949"
+            "amount" : "0.7861623551"
           }
         }
       }, {
@@ -360,7 +264,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "16.98"
+            "amount" : "3.23"
           }
         }
       } ]
@@ -369,8 +273,8 @@
     "queryType" : "R13",
     "results" : [ {
       "timePeriod" : {
-        "end" : "2026-06-01",
-        "start" : "2026-05-01"
+        "start" : "2026-05-01",
+        "end" : "2026-06-01"
       },
       "estimated" : false,
       "groups" : [ {
@@ -382,59 +286,11 @@
           }
         }
       }, {
-        "keys" : [ "Product$DB-SERVER-1" ],
+        "keys" : [ "Product$DB-SERVER1" ],
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "439.0981980002"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "84.4836552"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EM" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "968.9389401987"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "437.1353701662"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "84.4836552"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "194.6849352"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "194.3963676416"
+            "amount" : "1.3616895465"
           }
         }
       }, {
@@ -442,7 +298,7 @@
         "metrics" : {
           "NetAmortizedCost" : {
             "unit" : "USD",
-            "amount" : "71.8704"
+            "amount" : "0.8218112176"
           }
         }
       } ]
