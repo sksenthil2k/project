@@ -2,6 +2,8 @@ Set-Content "src\main\java\com\healthproof\intplus\awscost\excel\AdvancedExcelPr
 package com.healthproof.intplus.awscost.excel;
 import com.healthproof.intplus.awscost.Model;
 import com.healthproof.intplus.awscost.util.ExcelMapper;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.openxml4j.opc.PackagingURIHelper;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -50,12 +52,11 @@ public class AdvancedExcelProcessor {
     private void initSheet(String c,String e){
         if(!check(c,e))return;
         setStr("H3",getRequiredDate());setNum("H4",0);setNum("H5",0);setNum("H6",0);
-        for(int i=1;i<30;i++){Row r11=sheet.getRow(11);Row r12=sheet.getRow(12);Row r13=sheet.getRow(13);if(r11!=null){Cell cl=r11.getCell(i);if(cl!=null){forceNumeric(cl,0);}}if(r12!=null){Cell cl=r12.getCell(i);if(cl!=null){forceNumeric(cl,0);}}if(r13!=null){Cell cl=r13.getCell(i);if(cl!=null){forceNumeric(cl,0);}}}
+        for(int i=1;i<30;i++){Row r11=sheet.getRow(11);Row r12=sheet.getRow(12);Row r13=sheet.getRow(13);if(r11!=null){Cell cl=r11.getCell(i);if(cl!=null)forceNumeric(cl,0);}if(r12!=null){Cell cl=r12.getCell(i);if(cl!=null)forceNumeric(cl,0);}if(r13!=null){Cell cl=r13.getCell(i);if(cl!=null)forceNumeric(cl,0);}}
     }
     private void forceNumeric(Cell c, double v){
         if(c instanceof XSSFCell){
-            org.apache.poi.xssf.usermodel.XSSFCell xc=(org.apache.poi.xssf.usermodel.XSSFCell)c;
-            org.openxmlformats.schemas.spreadsheetml.x2006.main.CTCell ct=xc.getCTCell();
+            org.openxmlformats.schemas.spreadsheetml.x2006.main.CTCell ct=((XSSFCell)c).getCTCell();
             if(ct.isSetF())ct.unsetF();
             if(ct.isSetV())ct.unsetV();
         }
@@ -87,7 +88,19 @@ public class AdvancedExcelProcessor {
     private String val(Map<String,String> m,String k){if(k==null)return "0";Object v=m.get(k);if(v!=null)return v.toString();String stripped=k.startsWith("Product$")?k.substring("Product$".length()):k;Object vs=m.get(stripped);if(vs!=null)return vs.toString();Object vp=m.get("Product$"+k);if(vp!=null)return vp.toString();return "0";}
     private void setNum(String ref,double v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());forceNumeric(c,v);}
     private void setStr(String ref,String v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());if(c instanceof XSSFCell){org.openxmlformats.schemas.spreadsheetml.x2006.main.CTCell ct=((XSSFCell)c).getCTCell();if(ct.isSetF())ct.unsetF();}c.setCellValue(v);}
-    private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
+    private void writeExcel() throws IOException {
+        // Remove calcChain.xml to prevent Excel "repair" error after formula cells are modified
+        try {
+            if (workbook instanceof XSSFWorkbook) {
+                OPCPackage pkg = ((XSSFWorkbook) workbook).getPackage();
+                pkg.deletePart(PackagingURIHelper.createPartName("/xl/calcChain.xml"));
+                System.out.println("calcChain.xml removed successfully");
+            }
+        } catch (Exception e) {
+            System.out.println("calcChain removal (safe to ignore): " + e.getMessage());
+        }
+        try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}
+    }
     private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
 }
 '@
