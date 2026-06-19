@@ -1,10 +1,36 @@
-																											
-Monthly Service Cost																											
-Change Type	Application ECS Cluster on EC2						Standalone Applications on EC2						Database Instances on EC2				Relational Database Service			FSx		Common  EC2 Services	AWS Common Services	CloudWatch	EM suite	Enterprise Support	Total Cost
-	"Integration Plus 
-API"	Integration Plus*	Workflow Plus	Pulse360	InsitzPlus	Quality360	EDIFECS	Tableau	Qlik Compose	Qlik Replicate	Qlik Catalog	"Qlik 
-Sense"	Server 1	Server 2	Server 3	Server 4	Server 1	Server 2	Server 3	Volume 1	Volume 2						
-On Demand	$0.00 	$0.00 	$29.30 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$1,225.54 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$158.29 	$0.00 	$0.79 	$0.00 	$0.00 	$1,413.92 
-Compute Savings	$0.00 	$0.00 	$0.82 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$1.36 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$2.18 
-AWS Service	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 
-Total Cost	$0.00 	$0.00 	$30.12 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$1,226.90 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$158.29 	$0.00 	$0.79 	$0.00 	$0.00 	$1,416.10 
+[ghc-cs]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = CS
+[ghc-dev]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = DEV
+[ghc-preprod]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = PREPROD
+[ghc-prod]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = PROD
+[ghc-sit]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = SIT
+[ghc-uat]
+aws_access_key_id = PASTE_KEY
+aws_secret_access_key = PASTE_SECRET
+region = us-east-1
+company_name = GHC
+environment = UAT
