@@ -1,2824 +1,764 @@
-{
-  "AmeriBen-cs" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1517.783846295"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "138.53"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3352.8620096422"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "401.6672010213"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3008.2588086417"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "40.7329999896"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "40.7329999896"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS Backup" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.205820661"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.0143"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Directory Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "72.0861707915"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000805"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0005474934"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.012922665"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.00060375"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000177118"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon API Gateway" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.5282220795"
-          }
-        }
-      }, {
-        "keys" : [ "EC2 - Other" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.293821164"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1208770099"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000000078"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "10.2759146045"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.1002483372"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000002305"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000043792"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0748740547"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000134235"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "119.462"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "57.9607226748"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "138.53"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1517.783846295"
-          }
-        }
-      } ]
-    } ]
-  } ],
-  "AmeriBen-dev" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1238.4152351574"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "14.19"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2557.1938053082"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "147.3362881903"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "287.9276258383"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "620.5836834945"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "508.7880455312"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "31.6230242159"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "40.8619970356"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.3011221484"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "105.3583079734"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "17.3368876762"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "369.373392707"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "427.7823428255"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "13.4757"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.6353876719"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS CloudFormation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudTrail" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CodePipeline" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2.57278"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.37655"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000073255"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0002737322"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.021206115"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.00121555"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000181248"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon API Gateway" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1451169103"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon EC2 Container Registry (ECR)" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.7906144243"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Container Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3.4824731313"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000458"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "36.5824324611"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0200555954"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000002783"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.1150081875"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0724761679"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000151303"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "22.7777625374"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "58.5129665437"
-          }
-        }
-      }, {
-        "keys" : [ "CloudWatch Events" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "CodeBuild" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "5.67525"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "14.19"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.2510155502"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "253.2941674561"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "35.7990073791"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "145.2824869301"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "145.6963490419"
-          }
-        }
-      } ]
-    } ]
-  } ],
-  "AmeriBen-preprod" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2536.7234628864"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "23.48"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "4418.4489338633"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "213.2831124927"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000025591"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "320.1207119051"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "886.3379467594"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "706.0324500479"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "41.6865454745"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "41.0230996511"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.7027025165"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "155.301301483"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "18.1564452117"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUSAPI" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1927762706"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "928.5077582437"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "992.7391902357"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "122.6326777019"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "15.2122133104"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS CloudFormation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudShell" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000001425"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudTrail" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CodePipeline" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.47173"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.0143"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000078085"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0002737322"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.01327767"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2.2180371929"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000181248"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon API Gateway" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.8512489846"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon EC2 Container Registry (ECR)" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.6177231258"
-          }
-        }
-      }, {
-        "keys" : [ "EC2 - Other" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "56.5063683179"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Container Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Load Balancing" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "12.9689092686"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.9907486268"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000458"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "35.8612030865"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0058919643"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2.1720598237"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0721073836"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000151303"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "54.2081856822"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "20.8568861052"
-          }
-        }
-      }, {
-        "keys" : [ "CodeBuild" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.97405"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "23.48"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "26.0731393982"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "900.0629652"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "438.5901466303"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "29.5424535"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "458.0243899249"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "101.739464717"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "302.7218682871"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "60.4229308289"
-          }
-        }
-      } ]
-    } ]
-  } ],
-  "AmeriBen-prod" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1317.8368529825"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "364.04"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "11407.8216361339"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1731.309526934"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1016261204"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "353.3163223727"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-REPLICA" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "626.2444255727"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "179.1866007696"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "194.0079021891"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "16.1593449804"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "47.3670766905"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "19.9305072829"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1209.2986766313"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1000.0514514419"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1880.7810579184"
-          }
-        }
-      }, {
-        "keys" : [ "Product$RDS-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2329.3194739198"
-          }
-        }
-      }, {
-        "keys" : [ "Product$RDS-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2167.2597406348"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "17.5279026754"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS CloudFormation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudTrail" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CodePipeline" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.03381"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.0143"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000805"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0005474934"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.8246869064"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.2746297986"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000177118"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon API Gateway" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.2903407193"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon EC2 Container Registry (ECR)" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3.9935322675"
-          }
-        }
-      }, {
-        "keys" : [ "EC2 - Other" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "28.7682659983"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Container Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.5929321202"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000000078"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "36.6963065035"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Relational Database Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "79.2104431886"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0228699221"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.3635958386"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1186390033"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000134235"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "149.3159539342"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1064.6881865267"
-          }
-        }
-      }, {
-        "keys" : [ "CodeBuild" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.060375"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "364.04"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "30.6182090586"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "218.0863537163"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "336.5576605393"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "468.5885764782"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "117.321732518"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "146.6643206721"
-          }
-        }
-      } ]
-    } ]
-  } ],
-  "AmeriBen-sit" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1613.7382394874"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "26.37"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3266.6795931695"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "205.1740349289"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "596.5897358285"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "582.9910265142"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "547.0501623891"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "31.4314453288"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "85.0878622304"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "21.6351342792"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "170.9971471402"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "25.8195627312"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUSAPI" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.3229740508"
-          }
-        }
-      }, {
-        "keys" : [ "Product$P360" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2.2709417837"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "370.1301729433"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "434.7214866158"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "192.2672285484"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "26.560677857"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS CloudFormation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudShell" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000672"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudTrail" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CodePipeline" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.30912"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.0465"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.00007567"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0002737322"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0150213"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.9272127776"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000181248"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon API Gateway" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.4359749569"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon EC2 Container Registry (ECR)" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.5924577785"
-          }
-        }
-      }, {
-        "keys" : [ "EC2 - Other" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.6159746092"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Container Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "4.0476808306"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000458"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "45.0115468563"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.1534721464"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.1042545651"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0741168182"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000151303"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "94.617364508"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "28.2049300118"
-          }
-        }
-      }, {
-        "keys" : [ "CodeBuild" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.648025"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "26.37"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044002"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461043999"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461043999"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "17.8826222237"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "337.8178501944"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "42.2358187001"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "145.523230447"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "145.6770862329"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "192.3859964893"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "73.577322"
-          }
-        }
-      } ]
-    } ]
-  } ],
-  "AmeriBen-uat" : [ {
-    "queryType" : "H4_H5",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Bundled Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Enterprise Discount Program Discount" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanCoveredUsage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1574.3345530559"
-          }
-        }
-      }, {
-        "keys" : [ "SavingsPlanNegation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "20.46"
-          }
-        }
-      }, {
-        "keys" : [ "Usage" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "4485.4422435839"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R12",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "146.7844375556"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "2.4837621532"
-          }
-        }
-      }, {
-        "keys" : [ "Product$COMMON" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "242.2112288465"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "964.9381692474"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "802.9235625883"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "26.9067099305"
-          }
-        }
-      }, {
-        "keys" : [ "Product$FSX-VOL1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "40.7734591352"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "21.448427358"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "64.7645322251"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "54.1348982546"
-          }
-        }
-      }, {
-        "keys" : [ "Product$P360" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0010147427"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-COMPOSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "929.7209864013"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-REPLICATE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "992.8438464448"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "192.7476597774"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "23.2195489233"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R14",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "AWS CloudFormation" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudShell" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000558"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CloudTrail" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS CodePipeline" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.41538"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Cost Explorer" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.0143"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Glue" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.000066815"
-          }
-        }
-      }, {
-        "keys" : [ "AWS HealthImaging" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0002737322"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Key Management Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.02113125"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Lambda" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Secrets Manager" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "3.1000431061"
-          }
-        }
-      }, {
-        "keys" : [ "AWS Step Functions" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000181248"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon EC2 Container Registry (ECR)" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.6610072909"
-          }
-        }
-      }, {
-        "keys" : [ "EC2 - Other" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "8.3047797734"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Compute Cloud - Compute" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Elastic Container Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon FSx" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.4816721062"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Glacier" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000000458"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon GuardDuty" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "50.4109288784"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Email Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0385738536"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Notification Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Queue Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "1.4296090593"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Storage Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0720361147"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Simple Workflow Service" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.0000151303"
-          }
-        }
-      }, {
-        "keys" : [ "Amazon Virtual Private Cloud" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "39.4686746605"
-          }
-        }
-      }, {
-        "keys" : [ "AmazonCloudWatch" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "20.0284775586"
-          }
-        }
-      }, {
-        "keys" : [ "CodeBuild" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0.87745"
-          }
-        }
-      }, {
-        "keys" : [ "Tax" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "20.46"
-          }
-        }
-      } ]
-    } ]
-  }, {
-    "queryType" : "R13",
-    "results" : [ {
-      "timePeriod" : {
-        "start" : "2026-05-01",
-        "end" : "2026-06-01"
-      },
-      "estimated" : false,
-      "groups" : [ {
-        "keys" : [ "Product$" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "0"
-          }
-        }
-      }, {
-        "keys" : [ "Product$CAPS-VIEW" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "100.7565385992"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER1" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.496841087"
-          }
-        }
-      }, {
-        "keys" : [ "Product$DB-SERVER2" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044"
-          }
-        }
-      }, {
-        "keys" : [ "Product$EDIFECS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "219.5461044"
-          }
-        }
-      }, {
-        "keys" : [ "Product$INSITZ" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "16.9337888166"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "387.4402987691"
-          }
-        }
-      }, {
-        "keys" : [ "Product$IPLUS-API" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "68.7330711573"
-          }
-        }
-      }, {
-        "keys" : [ "Product$QLIK-SENSE" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "194.9472840107"
-          }
-        }
-      }, {
-        "keys" : [ "Product$WPLUS" ],
-        "metrics" : {
-          "NetAmortizedCost" : {
-            "unit" : "USD",
-            "amount" : "146.934521816"
-          }
-        }
-      } ]
-    } ]
-  } ]
+$proj = "C:\Users\143500\Desktop\awscost\awscost\src\main\java\com\healthproof\intplus\awscost"
+$static = "C:\Users\143500\Desktop\awscost\awscost\src\main\resources\static"
+
+# ---- 1. CompanyProfile.java ----
+Set-Content "$proj\CompanyProfile.java" @'
+package com.healthproof.intplus.awscost;
+import java.util.ArrayList;
+import java.util.List;
+public class CompanyProfile {
+    private String companyName;
+    private List<String> environments = new ArrayList<>();
+    private List<String> profiles = new ArrayList<>();
+    public CompanyProfile(String companyName) { this.companyName = companyName; }
+    public String getCompanyName() { return companyName; }
+    public List<String> getEnvironments() { return environments; }
+    public List<String> getProfiles() { return profiles; }
+    public void addEnvironment(String env) { environments.add(env); }
+    public void addProfile(String profile) { profiles.add(profile); }
 }
+'@
+
+# ---- 2. CredentialsReader.java ----
+Set-Content "$proj\CredentialsReader.java" @'
+package com.healthproof.intplus.awscost;
+import org.springframework.stereotype.Service;
+import java.io.*;
+import java.util.*;
+@Service
+public class CredentialsReader {
+    private String getCredentialsFilePath() {
+        return System.getProperty("user.home") + File.separator + ".aws" + File.separator + "credentials";
+    }
+    public List<CompanyProfile> readProfiles() throws IOException {
+        Map<String, Map<String, String>> raw = new LinkedHashMap<>();
+        String cur = null;
+        try (BufferedReader r = new BufferedReader(new FileReader(getCredentialsFilePath()))) {
+            String line;
+            while ((line = r.readLine()) != null) {
+                line = line.trim();
+                if (line.startsWith("[") && line.endsWith("]")) {
+                    cur = line.substring(1, line.length() - 1);
+                    raw.put(cur, new LinkedHashMap<>());
+                } else if (cur != null && line.contains("=")) {
+                    String[] p = line.split("=", 2);
+                    raw.get(cur).put(p[0].trim().toLowerCase(), p[1].trim());
+                }
+            }
+        }
+        Map<String, CompanyProfile> grouped = new LinkedHashMap<>();
+        for (Map.Entry<String, Map<String, String>> e : raw.entrySet()) {
+            String pn = e.getKey();
+            String cn = e.getValue().get("company_name");
+            String ev = e.getValue().get("environment");
+            if (cn != null && ev != null) {
+                grouped.computeIfAbsent(cn, CompanyProfile::new);
+                grouped.get(cn).addEnvironment(ev.toUpperCase());
+                grouped.get(cn).addProfile(pn);
+            }
+        }
+        return new ArrayList<>(grouped.values());
+    }
+}
+'@
+
+# ---- 3. CostRequest.java ----
+Set-Content "$proj\CostRequest.java" @'
+package com.healthproof.intplus.awscost;
+
+import java.util.List;
+
+public class CostRequest {
+    private String companyName;
+    private List<String> environments;
+    private List<String> profiles;
+
+    private String environment;
+    private String accountName;
+    private String espCost;
+    private String yearMonth;
+
+    public String getCompanyName() {
+        return companyName != null ? companyName : "IBX";
+    }
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public List<String> getEnvironments() { return environments; }
+    public void setEnvironments(List<String> environments) { this.environments = environments; }
+
+    public List<String> getProfiles() { return profiles; }
+    public void setProfiles(List<String> profiles) { this.profiles = profiles; }
+
+    public String getEnvironment() {
+        return environment != null ? environment : "DEV";
+    }
+    public void setEnvironment(String environment) {
+        this.environment = environment;
+    }
+
+    public String getAccountName() {
+        return accountName != null ? accountName : "IBX";
+    }
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
+    }
+
+    public String getEspCost() {
+        return espCost != null ? espCost : "0";
+    }
+    public void setEspCost(String espCost) {
+        this.espCost = espCost;
+    }
+
+    public String getYearMonth() {
+        return yearMonth;
+    }
+    public void setYearMonth(String yearMonth) {
+        this.yearMonth = yearMonth;
+    }
+}
+'@
+
+# ---- 4. CostExplorerDev.java ----
+Set-Content "$proj\awsDev\CostExplorerDev.java" @'
+package com.healthproof.intplus.awscost.awsDev;
+import com.healthproof.intplus.awscost.Model;
+import com.healthproof.intplus.awscost.util.ExcelMapper;
+import org.springframework.stereotype.Service;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.http.SdkHttpConfigurationOption;
+import software.amazon.awssdk.http.apache.ApacheHttpClient;
+import software.amazon.awssdk.services.costexplorer.CostExplorerClient;
+import software.amazon.awssdk.services.costexplorer.model.*;
+import software.amazon.awssdk.thirdparty.jackson.core.JsonProcessingException;
+import software.amazon.awssdk.utils.AttributeMap;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentDate;
+import static com.healthproof.intplus.awscost.util.DateUtil.getPreviousDate;
+@Service
+public class CostExplorerDev {
+    private CostExplorerClient caClient;
+    private Model model;
+    private List<Map<String, Object>> rawQueriesData;
+    private String startDate;
+    private String endDate;
+    public Model getModel() { return model; }
+    public List<Map<String, Object>> getRawQueriesData() { return rawQueriesData; }
+    public void start(String profileName, String environment, String startDate, String endDate) throws Exception {
+        this.rawQueriesData = new ArrayList<>();
+        this.startDate = startDate;
+        this.endDate = endDate;
+        init(profileName);
+        getH4andH5(); getR12Values(); getNoTagAndCloudWatch(); calculateCommonService(); getRow13Values();
+        System.out.println("********----->: Profile=" + profileName + " | Env=" + environment);
+        model.printR12(); model.printR13(); model.printH4H5(); model.printR14();
+    }
+    private void init(String profileName) throws JsonProcessingException {
+        this.model = new Model();
+        caClient = CostExplorerClient.builder()
+                .credentialsProvider(ProfileCredentialsProvider.create(profileName))
+                .region(software.amazon.awssdk.regions.Region.US_EAST_1)
+                .httpClient(ApacheHttpClient.builder().buildWithDefaults(AttributeMap.builder()
+                        .put(SdkHttpConfigurationOption.TRUST_ALL_CERTIFICATES, Boolean.TRUE).build()))
+                .build();
+    }
+    public void getH4andH5() {
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost")
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("RECORD_TYPE").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("H4_H5", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapH4H5().put(g.keys().get(0), v.amount()))));
+    }
+    public void getR12Values() throws JsonProcessingException {
+        Expression ex = Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
+                .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R12", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR12().put(g.keys().get(0), v.amount()))));
+    }
+    public void getNoTagAndCloudWatch() {
+        Expression ex = Expression.builder().and(
+                Expression.builder().not(Expression.builder().dimensions(DimensionValues.builder()
+                        .key(Dimension.RECORD_TYPE).values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build()).build(),
+                Expression.builder().tags(TagValues.builder().key("Product").values("").build()).build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.DIMENSION).key("SERVICE").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R14", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR14().put(g.keys().get(0), v.amount()))));
+    }
+    public void getRow13Values() {
+        Expression ex = Expression.builder().dimensions(DimensionValues.builder().key(Dimension.RECORD_TYPE)
+                .values("Enterprise Discount Program Discount","SavingsPlanCoveredUsage").build()).build();
+        GetCostAndUsageRequest req = GetCostAndUsageRequest.builder()
+                .timePeriod(DateInterval.builder().start(this.startDate).end(this.endDate).build())
+                .granularity(Granularity.MONTHLY).metrics("NetAmortizedCost").filter(ex)
+                .groupBy(GroupDefinition.builder().type(GroupDefinitionType.TAG).key("Product").build()).build();
+        GetCostAndUsageResponse res = caClient.getCostAndUsage(req);
+        recordRawResponse("R13", res);
+        res.resultsByTime().forEach(r -> r.groups().forEach(g ->
+                g.metrics().forEach((k, v) -> model.getModelMapR13().put(g.keys().get(0), v.amount()))));
+    }
+    private void calculateCommonService() {
+        double common = new BigDecimal(model.getModelMapR12().get(ExcelMapper.COMMON).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
+        double total = new BigDecimal(model.getModelMapR12().get(ExcelMapper.NO_KEY_PRODUCT).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue();
+        double ec2 = total - new BigDecimal(model.getModelMapR14().get(ExcelMapper.Y12).toString()).setScale(2,RoundingMode.HALF_UP).doubleValue() + common;
+        model.getModelMapR14().put(ExcelMapper.W12, String.valueOf(ec2));
+    }
+    private void recordRawResponse(String queryName, GetCostAndUsageResponse response) {
+        Map<String, Object> queryRecord = new LinkedHashMap<>();
+        queryRecord.put("queryType", queryName);
+        List<Map<String, Object>> results = new ArrayList<>();
+        if (response != null && response.resultsByTime() != null) {
+            for (ResultByTime result : response.resultsByTime()) {
+                Map<String, Object> timeRecord = new LinkedHashMap<>();
+                timeRecord.put("timePeriod", Map.of("start", result.timePeriod().start(), "end", result.timePeriod().end()));
+                timeRecord.put("estimated", result.estimated());
+                List<Map<String, Object>> groups = new ArrayList<>();
+                if (result.groups() != null) {
+                    for (Group group : result.groups()) {
+                        Map<String, Object> groupRecord = new LinkedHashMap<>();
+                        groupRecord.put("keys", group.keys());
+                        Map<String, Map<String, String>> metrics = new LinkedHashMap<>();
+                        if (group.metrics() != null) {
+                            group.metrics().forEach((k, v) -> {
+                                metrics.put(k, Map.of("amount", v.amount(), "unit", v.unit()));
+                            });
+                        }
+                        groupRecord.put("metrics", metrics);
+                        groups.add(groupRecord);
+                    }
+                }
+                timeRecord.put("groups", groups);
+                results.add(timeRecord);
+            }
+        }
+        queryRecord.put("results", results);
+        rawQueriesData.add(queryRecord);
+    }
+}
+'@
+
+# ---- 5. CostContorller.java ----
+Set-Content "$proj\contorller\CostContorller.java" @'
+package com.healthproof.intplus.awscost.contorller;
+import com.healthproof.intplus.awscost.*;
+import com.healthproof.intplus.awscost.awsDev.CostExplorerDev;
+import com.healthproof.intplus.awscost.excel.AdvancedExcelProcessor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
+import java.io.*;
+import java.util.*;
+import static com.healthproof.intplus.awscost.util.DateUtil.getCurrentTimeStamp;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_FILE_NAME;
+import static com.healthproof.intplus.awscost.util.ExcelMapper.OUTPUT_PATH;
+@RestController
+public class CostContorller {
+    @Autowired private AdvancedExcelProcessor excelProcessor;
+    @Autowired private CostExplorerDev costExplorerDev;
+    @Autowired private CredentialsReader credentialsReader;
+    @Value("${excel.output.file.path}") private String outFilePath;
+    @GetMapping("/api/profiles")
+    public List<CompanyProfile> getProfiles() throws IOException { return credentialsReader.readProfiles(); }
+    @PostMapping("/api/generate")
+    public Map<String, Serializable> generate(@RequestBody CostRequest request) throws Exception {
+        List<Model> models = new ArrayList<>();
+        Map<String, List<Map<String, Object>>> allRawData = new LinkedHashMap<>();
+        String ymStr = request.getYearMonth();
+        java.time.YearMonth ym;
+        if (ymStr == null || ymStr.trim().isEmpty() || ymStr.equalsIgnoreCase("DEFAULT")) {
+            ym = java.time.YearMonth.now().minusMonths(1);
+        } else {
+            ym = java.time.YearMonth.parse(ymStr.trim());
+        }
+        String startDate = ym.atDay(1).toString();
+        String endDate = ym.plusMonths(1).atDay(1).toString();
+        java.time.format.DateTimeFormatter formatMonthYear = java.time.format.DateTimeFormatter.ofPattern("MMMyy", java.util.Locale.ENGLISH);
+        String monthYearName = ym.format(formatMonthYear).toUpperCase();
+        for (int i = 0; i < request.getProfiles().size(); i++) {
+            String profile = request.getProfiles().get(i);
+            String env = request.getEnvironments().get(i);
+            costExplorerDev.start(profile, env, startDate, endDate);
+            models.add(costExplorerDev.getModel());
+            allRawData.put(profile, costExplorerDev.getRawQueriesData());
+        }
+        excelProcessor.start(request.getCompanyName(), request.getEnvironments(), models, monthYearName);
+        saveRawDataJson(excelProcessor.getFileName(), allRawData);
+        return Map.of("id","1","message","Report generated!","code",200,
+                "timeStamp",getCurrentTimeStamp(),"fileName",excelProcessor.getFileName(),"status","success");
+    }
+    private void saveRawDataJson(String excelFileName, Object data) {
+        try {
+            if (excelFileName == null || !excelFileName.contains(".")) return;
+            String jsonFileName = excelFileName.substring(0, excelFileName.lastIndexOf(".")) + ".json";
+            File jsonFile = new File(outFilePath + File.separator + jsonFileName);
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, data);
+            System.out.println("Consolidated Raw AWS data saved to: " + jsonFile.getAbsolutePath());
+        } catch (Exception e) {
+            System.err.println("Failed to save raw AWS data JSON: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    @GetMapping("/downloads/{filename}")
+    public ResponseEntity<byte[]> downloadFile(@PathVariable String filename) throws IOException {
+        File file = new File(outFilePath + File.separator + filename);
+        try (FileInputStream fis = new FileInputStream(file); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+            byte[] buf = new byte[(int)file.length()]; int n;
+            while ((n = fis.read(buf)) != -1) bos.write(buf, 0, n);
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
+                    .body(bos.toByteArray());
+        }
+    }
+    @PostMapping("/downloads")
+    public ResponseEntity<byte[]> downloadFilePost(@RequestBody DownloadRequest req) throws IOException {
+        File file = new File(OUTPUT_PATH + OUTPUT_FILE_NAME);
+        try (FileInputStream fis = new FileInputStream(file); ByteArrayOutputStream bos = new ByteArrayOutputStream()) {
+            byte[] buf = new byte[(int)file.length()]; int n;
+            while ((n = fis.read(buf)) != -1) bos.write(buf, 0, n);
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"report.xlsx\"")
+                    .body(bos.toByteArray());
+        }
+    }
+}
+'@
+
+# ---- 6. AdvancedExcelProcessor.java ----
+Set-Content "$proj\excel\AdvancedExcelProcessor.java" @'
+package com.healthproof.intplus.awscost.excel;
+import com.healthproof.intplus.awscost.Model;
+import com.healthproof.intplus.awscost.util.ExcelMapper;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellReference;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import java.io.*;
+import java.math.*;
+import java.nio.file.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import static com.healthproof.intplus.awscost.util.DateUtil.getRequiredDate;
+@Service
+public class AdvancedExcelProcessor {
+    @Value("${excel.template.file.path}") private String templateFilePath;
+    @Value("${excel.template.file.name}") private String templateFileName;
+    @Value("${excel.input.file.path}") private String inputFilePath;
+    @Value("${excel.input.file.name}") private String inputFileName;
+    @Value("${excel.output.file.path}") private String outFilePath;
+    private Workbook workbook; private String fileName; private Sheet sheet;
+    public String getFileName() { return fileName; }
+    public void start(String companyName, List<String> environments, List<Model> models, String monthYearName) throws IOException {
+        String tp = templateFilePath+File.separator+companyName.toLowerCase()+"_"+templateFileName+ExcelMapper.FILE_EXTENSION;
+        if (!new File(tp).exists()) {
+            tp = templateFilePath+File.separator+templateFileName+ExcelMapper.FILE_EXTENSION;
+        }
+        try (InputStream fis = new FileInputStream(tp)) { workbook = new XSSFWorkbook(fis); workbook.setForceFormulaRecalculation(true); }
+        for (int i = 0; i < environments.size(); i++) {
+            String env = environments.get(i); Model model = models.get(i);
+            // Use company_name exactly as given in credentials file (dynamic, case-sensitive match)
+            String sheetName = companyName + "-" + env.toUpperCase();
+            sheet = workbook.getSheet(sheetName);
+            // Fallback: case-insensitive search if exact match not found
+            if (sheet == null) {
+                for (int s = 0; s < workbook.getNumberOfSheets(); s++) {
+                    if (workbook.getSheetName(s).equalsIgnoreCase(sheetName)) { sheet = workbook.getSheetAt(s); break; }
+                }
+            }
+            if (sheet == null) { System.out.println("Sheet not found: "+sheetName); continue; }
+            System.out.println("Processing sheet: " + sheet.getSheetName());
+            initSheet(companyName, env);
+            writeH4H5(model.getModelMapH4H5(), companyName, env);
+            writeR12(model.getModelMapR12(), companyName, env);
+            writeR14(model.getModelMapR14(), companyName, env);
+            writeR13(model.getModelMapR13(), companyName, env);
+            writeESPCost();
+        }
+        this.fileName = generateVersionedFileName(companyName, monthYearName);
+        writeExcel(); copyFileToInputDirectory();
+    }
+    private String generateVersionedFileName(String companyName, String monthYearName) {
+        String base = "USTHP_"+companyName+"_AWS_SERVICE_COST_"+monthYearName+"-V";
+        File[] ex = new File(outFilePath).listFiles((d,n)->n.startsWith(base)&&n.endsWith(ExcelMapper.FILE_EXTENSION));
+        int v=1; if(ex!=null) for(File f:ex){try{int x=Integer.parseInt(f.getName().substring(base.length(),f.getName().length()-ExcelMapper.FILE_EXTENSION.length()));if(x>=v)v=x+1;}catch(Exception ignored){}}
+        return base+v+ExcelMapper.FILE_EXTENSION;
+    }
+    private boolean check(String c,String e){return sheet!=null&&sheet.getSheetName().equalsIgnoreCase(c+"-"+e.toUpperCase());}
+    private void initSheet(String c,String e){
+        if(!check(c,e))return;
+        setStr("H3",getRequiredDate());setNum("H4",0);setNum("H5",0);setNum("H6",0);
+        for(int i=1;i<26;i++){Row r11=sheet.getRow(11);Row r12=sheet.getRow(12);Row r13=sheet.getRow(13);if(r11!=null){Cell cl=r11.getCell(i);if(cl!=null)cl.setCellValue(0);}if(r12!=null){Cell cl=r12.getCell(i);if(cl!=null)cl.setCellValue(0);}if(r13!=null){Cell cl=r13.getCell(i);if(cl!=null)cl.setCellValue(0);}}
+    }
+    public void writeH4H5(Map m,String c,String e){if(!check(c,e))return;setNum("H4",bd(val(m,ExcelMapper.H4)));setNum("H5",bd(val(m,ExcelMapper.H5)));}
+    public void writeR12(Map m,String c,String e){
+        if(!check(c,e))return;
+        setNum("B12",bd(val(m,ExcelMapper.B12)));setNum("C12",bd(val(m,ExcelMapper.C12)));setNum("D12",bd(val(m,ExcelMapper.D12)));
+        setNum("H12",bd(val(m,ExcelMapper.H12)));setNum("I12",bd(val(m,ExcelMapper.I12)));setNum("J12",bd(val(m,ExcelMapper.J12)));
+        setNum("K12",bd(val(m,ExcelMapper.K12)));setNum("N12",bd(val(m,ExcelMapper.N12)));setNum("O12",bd(val(m,ExcelMapper.O12)));
+        setNum("P12",bd(val(m,ExcelMapper.P12)));setNum("Q12",bd(val(m,ExcelMapper.Q12)));setNum("R12",bd(val(m,ExcelMapper.R12)));
+        setNum("S12",bd(val(m,ExcelMapper.S12)));setNum("T12",bd(val(m,ExcelMapper.T12)));setNum("U12",bd(val(m,ExcelMapper.U12)));
+        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("PROD"))setNum("U12",bd(val(m,ExcelMapper.U12_1)));
+        setNum("V12",bd(val(m,ExcelMapper.V12)));
+        setNum("Z12",bd(val(m,"Product$EM")));
+    }
+    public void writeR14(Map m,String c,String e){
+        if(!check(c,e))return;
+        System.out.println("R14 Map keys: " + m.keySet());
+        setNum("W12",bd(val(m,ExcelMapper.W12)));
+        setNum("Y12",bd(val(m,ExcelMapper.Y12)));
+        String sVal = "0";
+        if (m.containsKey("AWS Support (Enterprise)")) {
+            sVal = m.get("AWS Support (Enterprise)").toString();
+        } else if (m.containsKey("AWS Support")) {
+            sVal = m.get("AWS Support").toString();
+        } else if (m.containsKey("Support")) {
+            sVal = m.get("Support").toString();
+        }
+        setNum("AA12",bd(sVal));
+    }
+    public void writeR13(Map m,String c,String e){
+        if(!check(c,e))return;
+        setNum("B13",bd(val(m,ExcelMapper.B13)));setNum("C13",bd(val(m,ExcelMapper.C13)));setNum("D13",bd(val(m,ExcelMapper.D13)));
+        setNum("H13",bd(val(m,ExcelMapper.H13)));setNum("I13",bd(val(m,ExcelMapper.I13)));setNum("J13",bd(val(m,ExcelMapper.J13)));
+        setNum("K13",bd(val(m,ExcelMapper.K13)));setNum("N13",bd(val(m,ExcelMapper.N13)));setNum("O13",bd(val(m,ExcelMapper.O13)));
+        setNum("P13",bd(val(m,ExcelMapper.P13)));setNum("Q13",bd(val(m,ExcelMapper.Q13)));setNum("R13",bd(val(m,ExcelMapper.R12)));
+        setNum("S13",bd(val(m,ExcelMapper.O12)));setNum("Y13",bd(val(m,ExcelMapper.Y13)));
+        setNum("Z13",bd(val(m,"Product$EM")));
+        if(c.equalsIgnoreCase("IBX")&&e.equalsIgnoreCase("CS"))setNum("W13",bd(val(m,ExcelMapper.W13)));
+    }
+    private void writeESPCost(){setNum("H6",0);}
+    private double bd(String v){try{return new BigDecimal(v).setScale(2,RoundingMode.HALF_UP).doubleValue();}catch(Exception e){return 0.0;}}
+    private String val(Map<String,String> m,String k){if(k==null)return "0";Object v=m.get(k);if(v!=null)return v.toString();String stripped=k.startsWith("Product$")?k.substring("Product$".length()):k;Object vs=m.get(stripped);if(vs!=null)return vs.toString();Object vp=m.get("Product$"+k);if(vp!=null)return vp.toString();String normK=stripped.toLowerCase().replace("-","").replace(" ","");for(String mk:m.keySet()){String strippedMk=mk.startsWith("Product$")?mk.substring("Product$".length()):mk;String normMk=strippedMk.toLowerCase().replace("-","").replace(" ","");if(normK.equals(normMk)){Object vnm=m.get(mk);if(vnm!=null)return vnm.toString();}}return "0";}
+    private void setNum(String ref,double v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());if(c.getCellType()==CellType.FORMULA){c.setBlank();}c.setCellValue(v);}
+    private void setStr(String ref,String v){CellReference cr=new CellReference(ref);Row r=sheet.getRow(cr.getRow());if(r==null)return;Cell c=r.getCell(cr.getCol());if(c==null)c=r.createCell(cr.getCol());if(c.getCellType()==CellType.FORMULA){c.setBlank();}c.setCellValue(v);}
+    private void writeExcel() throws IOException{try(FileOutputStream fos=new FileOutputStream(outFilePath+File.separator+fileName)){workbook.write(fos);workbook.close();}}
+    private void copyFileToInputDirectory() throws IOException{Path dest=Paths.get(inputFilePath+File.separator+inputFileName+ExcelMapper.FILE_EXTENSION);if(Files.notExists(dest))Files.createFile(dest);Files.copy(Paths.get(outFilePath+File.separator+fileName),dest,StandardCopyOption.REPLACE_EXISTING);}
+}
+'@
+
+
+# ---- 7. index.html ----
+Set-Content "$static\index.html" @'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>USTHP AWS Cost Report</title>
+  <style>
+    :root {
+      --primary: #a78bfa;
+      --secondary: #60a5fa;
+      --bg-gradient: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+      --card-bg: rgba(255,255,255,.05);
+      --card-border: rgba(255,255,255,.1);
+      --card-hover-bg: rgba(167,139,250,.1);
+      --card-selected-bg: rgba(167,139,250,.2);
+      --card-selected-border: #a78bfa;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:"Segoe UI",sans-serif;background:var(--bg-gradient);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:40px 20px;color:#fff}
+    .header{text-align:center;margin-bottom:30px}
+    .header h1{font-size:2.5rem;letter-spacing:2px;background:linear-gradient(90deg,#a78bfa,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .header p{color:#94a3b8;margin-top:8px}
+    
+    .controls-bar{display:flex;flex-wrap:wrap;gap:15px;align-items:center;justify-content:center;background:rgba(255,255,255,.03);border:1px solid var(--card-border);backdrop-filter:blur(10px);padding:15px 25px;border-radius:16px;margin-bottom:30px;width:100%;max-width:900px}
+    select{background:rgba(255,255,255,.07);border:1px solid var(--card-border);border-radius:8px;color:#fff;padding:10px 16px;font-size:.95rem;outline:none;cursor:pointer;transition:all .3s}
+    select:hover{background:rgba(255,255,255,.12);border-color:var(--primary)}
+    option{background:#1e1b4b;color:#fff}
+    
+    .btn{padding:10px 20px;border-radius:8px;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .3s;border:1px solid transparent}
+    .btn-secondary{background:rgba(255,255,255,.05);border-color:var(--card-border);color:#e5e7eb}
+    .btn-secondary:hover{background:rgba(255,255,255,.1);border-color:#9ca3af}
+    .btn-primary{background:linear-gradient(90deg,var(--primary),var(--secondary));color:#fff;box-shadow:0 4px 14px rgba(167,139,250,.3)}
+    .btn-primary:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 20px rgba(167,139,250,.45)}
+    .btn-primary:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+    
+    .buttons-container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;max-width:900px;width:100%;margin-bottom:30px}
+    .company-card{position:relative;background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:35px 25px;text-align:center;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);min-width:200px;backdrop-filter:blur(10px);user-select:none}
+    .company-card:hover{background:var(--card-hover-bg);border-color:rgba(167,139,250,.4);transform:translateY(-4px)}
+    .company-card.selected{background:var(--card-selected-bg);border-color:var(--card-selected-border);box-shadow:0 0 20px rgba(167,139,250,.25)}
+    
+    .card-checkbox{position:absolute;top:15px;right:15px;width:22px;height:22px;border-radius:6px;border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:all .2s;background:rgba(0,0,0,.2)}
+    .company-card.selected .card-checkbox{background:var(--primary);border-color:var(--primary)}
+    .card-checkbox::after{content:'';width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);display:none;margin-bottom:2px}
+    .company-card.selected .card-checkbox::after{display:block}
+    
+    .company-name{font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:10px}
+    .company-card.selected .company-name{color:#a78bfa}
+    
+    .status-badge{font-size:.8rem;padding:4px 12px;border-radius:12px;display:inline-block;font-weight:600;background:rgba(255,255,255,.05);color:#9ca3af;margin-top:10px}
+    .status-badge.idle{display:none}
+    .status-badge.generating{background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3)}
+    .status-badge.completed{background:rgba(16,185,129,.15);color:#10b981;border:1px solid rgba(16,185,129,.3)}
+    .status-badge.failed{background:rgba(239,68,68,.15);color:#ef4444;border:1px solid rgba(239,68,68,.3)}
+    
+    .spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#a78bfa;border-radius:50%;animation:spin .8s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    
+    .status-box{margin-top:20px;max-width:900px;width:100%;border-radius:12px;padding:20px 24px;display:none}
+    .status-box.active{display:block;background:rgba(255,255,255,.03);border:1px solid var(--card-border)}
+    .log-entry{margin-bottom:8px;font-family:monospace;font-size:.9rem;display:flex;align-items:center;gap:10px}
+    .log-success{color:#34d399}
+    .log-error{color:#f87171}
+    .log-info{color:#60a5fa}
+    .download-link{color:#60a5fa;text-decoration:underline;cursor:pointer}
+    .loading-msg{color:#94a3b8;margin-top:30px;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="header"><h1>USTHP AWS Cost Report</h1><p>Select companies to generate and download monthly cost reports</p></div>
+  
+  <div class="controls-bar">
+    <select id="companyFilter"><option value="ALL">All Accounts</option></select>
+    <select id="monthSelect"></select>
+    <button class="btn btn-secondary" id="btnSelectAll">Select All</button>
+    <button class="btn btn-secondary" id="btnDeselectAll">Clear</button>
+    <button class="btn btn-primary" id="btnGenerate" disabled>Generate Selected (0)</button>
+  </div>
+
+  <div class="buttons-container" id="bc"><p class="loading-msg">Loading companies...</p></div>
+  <div class="status-box" id="sb"></div>
+
+  <script>
+    let allProfiles = [];
+    let selectedCompanies = new Set();
+    let cardStatuses = {};
+
+    function populateMonths() {
+      const monthSelect = document.getElementById('monthSelect');
+      monthSelect.innerHTML = '';
+      
+      const defOpt = document.createElement('option');
+      defOpt.value = 'DEFAULT';
+      defOpt.textContent = 'Default (Previous Month)';
+      defOpt.selected = true;
+      monthSelect.appendChild(defOpt);
+
+      const now = new Date();
+      for (let i = 1; i <= 12; i++) {
+        const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+        const opt = document.createElement('option');
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        opt.value = `${year}-${month}`;
+        const monthName = d.toLocaleString('default', { month: 'long' });
+        opt.textContent = `${monthName} ${year}`;
+        monthSelect.appendChild(opt);
+      }
+    }
+
+    async function load() {
+      try {
+        populateMonths();
+        const res = await fetch('/awscost/api/profiles');
+        allProfiles = await res.json();
+        
+        const filterSelect = document.getElementById('companyFilter');
+        filterSelect.innerHTML = '<option value="ALL">All Accounts</option>';
+        allProfiles.forEach(p => {
+          const opt = document.createElement('option');
+          opt.value = p.companyName;
+          opt.textContent = p.companyName;
+          filterSelect.appendChild(opt);
+        });
+
+        allProfiles.forEach(p => {
+          if (!cardStatuses[p.companyName]) {
+            cardStatuses[p.companyName] = { status: 'idle', msg: 'Idle' };
+          }
+        });
+
+        render();
+      } catch (e) {
+        document.getElementById('bc').innerHTML = '<p class="loading-msg" style="color:#f87171">Failed to load profiles.</p>';
+      }
+    }
+
+    function render() {
+      const container = document.getElementById('bc');
+      container.innerHTML = '';
+      
+      const filterVal = document.getElementById('companyFilter').value;
+
+      let list = allProfiles;
+      if (filterVal !== 'ALL') {
+        list = allProfiles.filter(p => p.companyName === filterVal);
+      }
+
+      list.sort((a, b) => a.companyName.localeCompare(b.companyName));
+
+      if (!list.length) {
+        container.innerHTML = '<p class="loading-msg">No companies found.</p>';
+        return;
+      }
+
+      list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'company-card' + (selectedCompanies.has(p.companyName) ? ' selected' : '');
+        
+        const stateObj = cardStatuses[p.companyName] || { status: 'idle', msg: 'Idle' };
+        let statusBadgeClass = 'status-badge';
+        let statusText = stateObj.msg;
+        if (stateObj.status === 'generating') {
+          statusBadgeClass += ' generating';
+          statusText = '<div class="spinner" style="margin-right:5px; vertical-align:middle"></div> Generating...';
+        } else if (stateObj.status === 'completed') {
+          statusBadgeClass += ' completed';
+        } else if (stateObj.status === 'failed') {
+          statusBadgeClass += ' failed';
+        } else {
+          statusBadgeClass += ' idle';
+        }
+
+        card.innerHTML = `
+          <div class="card-checkbox"></div>
+          <div class="company-name">${p.companyName}</div>
+          <div class="${statusBadgeClass}">${statusText}</div>
+        `;
+
+        card.onclick = (e) => {
+          if (stateObj.status === 'generating') return;
+          toggleSelect(p.companyName);
+        };
+
+        container.appendChild(card);
+      });
+
+      updateGenerateButton();
+    }
+
+    function toggleSelect(name) {
+      if (selectedCompanies.has(name)) {
+        selectedCompanies.delete(name);
+      } else {
+        selectedCompanies.add(name);
+      }
+      render();
+    }
+
+    function updateGenerateButton() {
+      const btn = document.getElementById('btnGenerate');
+      btn.textContent = `Generate Selected (${selectedCompanies.size})`;
+      btn.disabled = selectedCompanies.size === 0;
+    }
+
+    document.getElementById('btnSelectAll').onclick = () => {
+      const filterVal = document.getElementById('companyFilter').value;
+      const list = filterVal === 'ALL' ? allProfiles : allProfiles.filter(p => p.companyName === filterVal);
+      list.forEach(p => {
+        if (cardStatuses[p.companyName].status !== 'generating') {
+          selectedCompanies.add(p.companyName);
+        }
+      });
+      render();
+    };
+
+    document.getElementById('btnDeselectAll').onclick = () => {
+      selectedCompanies.clear();
+      render();
+    };
+
+    document.getElementById('companyFilter').onchange = () => {
+      selectedCompanies.clear();
+      render();
+    };
+
+    document.getElementById('btnGenerate').onclick = async () => {
+      const sb = document.getElementById('sb');
+      sb.className = 'status-box active';
+      sb.innerHTML = '<h3>Execution Logs</h3><hr style="margin:10px 0; border-color:rgba(255,255,255,.1)"/>';
+      
+      const toGenerate = Array.from(selectedCompanies);
+      document.querySelectorAll('.controls-bar button, .controls-bar select').forEach(el => el.disabled = true);
+
+      for (const compName of toGenerate) {
+        const profile = allProfiles.find(p => p.companyName === compName);
+        if (!profile) continue;
+
+        cardStatuses[compName] = { status: 'generating', msg: 'Generating...' };
+        render();
+
+        const logRow = document.createElement('div');
+        logRow.className = 'log-entry log-info';
+        logRow.innerHTML = `<div class="spinner"></div> Processing <strong>${compName}</strong>...`;
+        sb.appendChild(logRow);
+
+        try {
+          const res = await fetch('/awscost/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              companyName: profile.companyName,
+              environments: profile.environments,
+              profiles: profile.profiles,
+              yearMonth: document.getElementById('monthSelect').value
+            })
+          });
+          const data = await res.json();
+
+          if (data.status === 'success') {
+            cardStatuses[compName] = { status: 'completed', msg: 'Completed' };
+            logRow.className = 'log-entry log-success';
+            logRow.innerHTML = `&#10004; <strong>${compName}</strong> report generated successfully: <a class="download-link" href="/awscost/downloads/${data.fileName}" download>${data.fileName}</a>`;
+            
+            const link = document.createElement('a');
+            link.href = '/awscost/downloads/' + data.fileName;
+            link.download = data.fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          } else {
+            throw new Error(data.message || 'Generation failed');
+          }
+        } catch (e) {
+          cardStatuses[compName] = { status: 'failed', msg: 'Failed' };
+          logRow.className = 'log-entry log-error';
+          logRow.innerHTML = `&#10007; <strong>${compName}</strong> failed: ${e.message}`;
+        }
+        render();
+      }
+
+      document.querySelectorAll('.controls-bar button, .controls-bar select').forEach(el => el.disabled = false);
+      updateGenerateButton();
+    };
+
+    load();
+  </script>
+</body>
+</html>
+'@
+
+Write-Host ""
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host "  ALL 7 FILES DEPLOYED SUCCESSFULLY!  " -ForegroundColor Green
+Write-Host "========================================" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "Next steps:" -ForegroundColor Yellow
+Write-Host "1. Update C:\Users\143500\.aws\credentials - add company_name and environment to each profile" -ForegroundColor Yellow
+Write-Host "2. Rebuild Project in IntelliJ (Build -> Rebuild Project)" -ForegroundColor Yellow
+Write-Host "3. Restart the application" -ForegroundColor Yellow
