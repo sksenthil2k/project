@@ -1,16 +1,207 @@
-(Change Type	Application ECS Cluster on EC2						Standalone Applications on EC2						Database Instances on EC2				Relational Database Service			FSx		Common  EC2 Services	AWS Common Services	CloudWatch	EM suite	Enterprise Support	Total Cost
-	"Integration Plus 
-API"	Integration Plus*	Workflow Plus	Pulse360	InsitzPlus	Quality360	EDIFECS	Tableau	Qlik Compose	Qlik Replicate	Qlik Catalog	"Qlik 
-Sense"	Server 1	Server 2	Server 3	Server 4	Server 1	Server 2	Server 3	Volume 1	Volume 2						
-On Demand	$34.87 	$115.22 	$0.00 	$0.00 	$0.00 	$0.00 	$109.52 	$0.00 	$68.79 	$63.44 	$0.00 	$0.00 	$1,850.51 	$1,797.40 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$70.56 	$0.00 	$288.72 	$0.00 	$37.93 	$0.00 	$0.00 	$4,436.96 
-Compute Savings	$35.94 	$218.57 	$0.00 	$0.00 	$0.00 	$0.00 	$109.01 	$0.00 	$194.42 	$194.68 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$752.62 
-AWS Service	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 
-Total Cost	$70.81 	$333.79 	$0.00 	$0.00 	$0.00 	$0.00 	$218.53 	$0.00 	$263.21 	$258.12 	$0.00 	$0.00 	$1,850.51 	$1,797.40 	$0.00 	$0.00 	$0.00 	$0.00 	$0.00 	$70.56 	$0.00 	$288.72 	$0.00 	$37.93 	$0.00 	$0.00 	$5,189.58 
-) (AWS Account ID							778649375009						
-AWS Account Name							ust-aws-healthproof-ghc-dev 						
-Billing Month							May 2026						
-Bill Amount							$4,423.34 						
-Saving Plan Cost (Charged at Payor Account)							$752.62 						
-Enterprise Support Cost (Charged at Payor Account)							$0.00 						
-Total Cost 							$5,175.96 						
-)
+Amazon Simple Notification Service: 0
+Tax: 364.04
+Amazon GuardDuty: 36.6963065035
+CodeBuild: 0.060375
+Amazon FSx: 0.5929321202
+AmazonCloudWatch: 1064.6881865267
+AWS Key Management Service: 0.8246869064
+Amazon Simple Workflow Service: 0.0000134235
+AWS CodePipeline: 0.03381
+Amazon Elastic Container Service: 0
+AWS Lambda: 0
+Amazon Simple Storage Service: 0.1186390033
+Amazon Glacier: 0.000000078
+AWS CloudTrail: 0
+Amazon Virtual Private Cloud: 149.3159539342
+EC2 - Other: 28.7682659983
+Amazon Relational Database Service: 79.2104431886
+Common EC2 Services: 1019.9399999999998
+AWS HealthImaging: 0.0005474934
+Amazon EC2 Container Registry (ECR): 3.9935322675
+Amazon Elastic Compute Cloud - Compute: 0
+AWS Secrets Manager: 1.2746297986
+Amazon Simple Queue Service: 0.3635958386
+AWS Cost Explorer: 1.0143
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.awssdk.http.apache.ApacheHttpClient  : SSL Certificate verification is disabled. This is not a safe setting and should only be used for testing.
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:23.195+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:23.213+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:23.213+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:23.213+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:23.213+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:23.213+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:24.019+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:24.019+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:24.019+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:24.019+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:24.019+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:24.741+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:24.741+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:24.741+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:24.741+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:24.741+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:25.420+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:25.420+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:25.420+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:25.420+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:25.420+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+********----->: Profile=AmeriBen-sit | Env=SIT
+Model contents R12 :
+Product$P360: 2.2709417837
+Product$IPLUS: 170.9971471402
+Product$FSX-VOL1: 85.0878622304
+Product$COMMON: 596.5897358285
+Product$QLIK-SENSE: 192.2672285484
+Product$QLIK-COMPOSE: 370.1301729433
+Product$INSITZ: 21.6351342792
+Product$WPLUS: 26.560677857
+Product$: 205.1740349289
+Product$IPLUS-API: 25.8195627312
+Product$QLIK-REPLICATE: 434.7214866158
+Product$IPLUSAPI: 0.3229740508
+Product$EDIFECS: 31.4314453288
+Product$DB-SERVER2: 547.0501623891
+Product$DB-SERVER1: 582.9910265142
+Model contents R13 :
+Product$: 0
+Product$IPLUS: 337.8178501944
+Product$IPLUS-API: 42.2358187001
+Product$QLIK-REPLICATE: 145.6770862329
+Product$QLIK-SENSE: 192.3859964893
+Product$QLIK-COMPOSE: 145.523230447
+Product$EDIFECS: 219.5461043999
+Product$DB-SERVER2: 219.5461043999
+Product$INSITZ: 17.8826222237
+Product$DB-SERVER1: 219.5461044002
+Product$WPLUS: 73.577322
+Model contents H4 & H5:
+Usage: 3266.6795931695
+Bundled Discount: 0
+Enterprise Discount Program Discount: 0
+SavingsPlanCoveredUsage: 1613.7382394874
+SavingsPlanNegation: 0
+Tax: 26.37
+Model contents R14 :
+AWS Step Functions: 0.0000181248
+Amazon API Gateway: 0.4359749569
+AWS CloudFormation: 0
+Amazon Simple Email Service: 0.1534721464
+AWS Glue: 0.00007567
+Amazon Simple Notification Service: 0
+Tax: 26.37
+Amazon GuardDuty: 45.0115468563
+CodeBuild: 0.648025
+Amazon FSx: 4.0476808306
+AmazonCloudWatch: 28.2049300118
+AWS Key Management Service: 0.0150213
+Amazon Simple Workflow Service: 0.0000151303
+AWS CodePipeline: 0.30912
+AWS CloudShell: 0.0000000672
+Amazon Elastic Container Service: 0
+AWS Lambda: 0
+Amazon Simple Storage Service: 0.0741168182
+Amazon Glacier: 0.0000000458
+AWS CloudTrail: 0
+Amazon Virtual Private Cloud: 94.617364508
+EC2 - Other: 1.6159746092
+Common EC2 Services: 773.5600000000001
+AWS HealthImaging: 0.0002737322
+Amazon EC2 Container Registry (ECR): 0.5924577785
+Amazon Elastic Compute Cloud - Compute: 0
+AWS Secrets Manager: 0.9272127776
+Amazon Simple Queue Service: 1.1042545651
+AWS Cost Explorer: 1.0465
+2026-06-29T10:55:26.171+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.awssdk.http.apache.ApacheHttpClient  : SSL Certificate verification is disabled. This is not a safe setting and should only be used for testing.
+2026-06-29T10:55:26.173+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:26.173+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:26.173+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:26.173+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:26.173+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:26.181+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:26.181+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:26.181+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:26.181+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:26.181+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:26.990+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:26.990+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:26.990+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:26.990+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:26.990+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:27.694+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:27.694+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:27.694+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:27.694+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:27.694+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+2026-06-29T10:55:28.568+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_access_key_id' detected on line 147. The later one in the file will be used.
+2026-06-29T10:55:28.568+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'aws_secret_access_key' detected on line 148. The later one in the file will be used.
+2026-06-29T10:55:28.568+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'region' detected on line 149. The later one in the file will be used.
+2026-06-29T10:55:28.568+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'company_name' detected on line 150. The later one in the file will be used.
+2026-06-29T10:55:28.568+05:30  WARN 35360 --- [Aws Cost] [nio-8080-exec-1] s.a.a.p.internal.ProfileFileReader       : Warning: Duplicate property 'environment' detected on line 151. The later one in the file will be used.
+********----->: Profile=AmeriBen-uat | Env=UAT
+Model contents R12 :
+Product$P360: 0.0010147427
+Product$IPLUS: 64.7645322251
+Product$FSX-VOL1: 40.7734591352
+Product$COMMON: 242.2112288465
+Product$QLIK-SENSE: 192.7476597774
+Product$QLIK-COMPOSE: 929.7209864013
+Product$INSITZ: 21.448427358
+Product$WPLUS: 23.2195489233
+Product$: 146.7844375556
+Product$IPLUS-API: 54.1348982546
+Product$QLIK-REPLICATE: 992.8438464448
+Product$CAPS-VIEW: 2.4837621532
+Product$EDIFECS: 26.9067099305
+Product$DB-SERVER2: 802.9235625883
+Product$DB-SERVER1: 964.9381692474
+Model contents R13 :
+Product$: 0
+Product$IPLUS: 387.4402987691
+Product$IPLUS-API: 68.7330711573
+Product$QLIK-SENSE: 194.9472840107
+Product$CAPS-VIEW: 100.7565385992
+Product$EDIFECS: 219.5461044
+Product$DB-SERVER2: 219.5461044
+Product$INSITZ: 16.9337888166
+Product$DB-SERVER1: 219.496841087
+Product$WPLUS: 146.934521816
+Model contents H4 & H5:
+Usage: 4485.4422435839
+Bundled Discount: 0
+Enterprise Discount Program Discount: 0
+SavingsPlanCoveredUsage: 1574.3345530559
+SavingsPlanNegation: 0
+Tax: 20.46
+Model contents R14 :
+AWS Step Functions: 0.0000181248
+AWS CloudFormation: 0
+Amazon Simple Email Service: 0.0385738536
+AWS Glue: 0.000066815
+Amazon Simple Notification Service: 0
+Tax: 20.46
+Amazon GuardDuty: 50.4109288784
+CodeBuild: 0.87745
+Amazon FSx: 0.4816721062
+AmazonCloudWatch: 20.0284775586
+AWS Key Management Service: 0.02113125
+Amazon Simple Workflow Service: 0.0000151303
+AWS CodePipeline: 0.41538
+AWS CloudShell: 0.0000000558
+Amazon Elastic Container Service: 0
+AWS Lambda: 0
+Amazon Simple Storage Service: 0.0720361147
+Amazon Glacier: 0.0000000458
+AWS CloudTrail: 0
+Amazon Virtual Private Cloud: 39.4686746605
+EC2 - Other: 8.3047797734
+Common EC2 Services: 368.96000000000004
+AWS HealthImaging: 0.0002737322
+Amazon EC2 Container Registry (ECR): 0.6610072909
+Amazon Elastic Compute Cloud - Compute: 0
+AWS Secrets Manager: 3.1000431061
+Amazon Simple Queue Service: 1.4296090593
+AWS Cost Explorer: 1.0143
+Consolidated Raw AWS data saved to: C:\Users\143500\costsheet\output\USTHP_AmeriBen_AWS_SERVICE_COST_MAY26-V2.json
